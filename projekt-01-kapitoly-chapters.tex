@@ -849,10 +849,10 @@ Během vykreslení prostředku AmpCustomStylesheetResource nebo AmpCustomStylesh
     \item Asynchronně se stáhnout všechny požadované CSS.
     \item Všechny CSS kódy se spojí do jediného CSS.
     \item Dojde k ověření na předčastné ukončení.
-    \item CSS se naparsuje.\footnote{Parsování CSS se provádí pomocí knihovny ExCSS-Core. \newline https://github.com/HockeyJustin/ExCSS_Core.}
+    \item CSS se naparsuje.\footnote{Parsování CSS se provádí pomocí knihovny ExCSS-Core. \newline \url{https://github.com/HockeyJustin/ExCSS_Core}}
     \item Pokud je v rámci DotvvmAmpConfiguration nastavena vlastnost StyleRemoveForbiddenImportant na true, tak dojde k odstranění všech CSS !important anotací. 
     \item Naparsovaný CSS dokument se rozdělí na CSS Keyframes a ostatní.
-    \item Obě výsledné CSS projdou minifikací.\footnote{Minifikace: odstranění všech přebytečných znaků pro účel snížení velikosti. \newline Pro minifikaci CSS se používá kód publikovaný Madsem Kristensenem na jeho blogu.\newline https://madskristensen.net/blog/efficient-stylesheet-minification-in-c}
+    \item Obě výsledné CSS projdou minifikací.\footnote{Minifikace: odstranění všech přebytečných znaků pro účel snížení velikosti. \newline Pro minifikaci CSS se používá kód publikovaný Madsem Kristensenem na jeho blogu.\newline \url{https://madskristensen.net/blog/efficient-stylesheet-minification-in-c}}
 \end{enumerate}
 
 \section{Sestavení finální stránky}
@@ -889,7 +889,7 @@ Technologie AMP v základu obsahuje jen tři vestavěné komponenty: amp-layout,
 
 Aktuálně je v rámci technologie AMP dokumentace k 240 komponentám. V rámci DotVVM.AMP jsou ale podporovány jen výše zmíněné tři komponenty. Pro přidání podpory pro další komponenty je možné pomocí vytvoření vlastní transformace a případně i vlastní komponenty.
 
-Pokud bychom chtěli přidat podporu pro komponentu amp-iframe\footnote{amp-iframe: https://amp.dev/documentation/components/amp-iframe/?format=websites}, tak musíme nejdříve vytvořit DotVVM komponentu \footnote{Tutoriál na tvorbu komponent lze nalézt v rámci DotVVM dokumentace v sekci Control Development.\newline https://www.dotvvm.com/docs/tutorials/control-development-code-only-controls/2.0}, kterou nahradíme všechny iframe na stránce. Tato komponenta bude obsahovat všechny vlastnosti, které budeme chtít podporovat. V případě amp-iframe to jsou:
+Pokud bychom chtěli přidat podporu pro komponentu amp-iframe\footnote{amp-iframe: \url{https://amp.dev/documentation/components/amp-iframe/?format=websites}}, tak musíme nejdříve vytvořit DotVVM komponentu \footnote{Tutoriál na tvorbu komponent lze nalézt v rámci DotVVM dokumentace v sekci Control Development.\newline \url{https://www.dotvvm.com/docs/tutorials/control-development-code-only-controls/2.0}}, kterou nahradíme všechny iframe na stránce. Tato komponenta bude obsahovat všechny vlastnosti, které budeme chtít podporovat. V případě amp-iframe to jsou:
 \begin{itemize}
     \item src\newline
     Odkaz na cílovou stránku.
@@ -950,7 +950,7 @@ public class IframeTransform : ControlReplacementTransformBase
 
 \chapter{Postup integrace překladu stávajících DotVVM stránek do technologie AMP}
 V této kapitole popíši postup, jak DotVVM.AMP použít pro přidání AMP verze k již existující DotVVM stránce v rámci reálné webové aplikace. V rámci této ukázky použiji DotVVM.AMP ve verzi 0.1.0.7\footnote{\label{nuget}Knihovna DotVVM.AMP ve verzi 0.1.0.7 je veřejně dostupná na nuget.org.\newline
-https://www.nuget.org/packages/DotVVM.AMP/0.1.0.7}. Jako aplikaci, na které budu převod do AMP prezentovat, jsem zvolil webovou aplikaci, která slouží pro prezentaci portfolia. Konkrétně jsem zvolil stránku, která obsahuje detail projektu. Tuto aplikaci (a konkrétní stránky v rámci aplikace) jsem zvolil z toho důvodu, že je dynamicky generovaná\footnote{View je napsáno obecně pro jakýkoliv projekt a specifické informace o dané referenci jsou doplněné v rámci modelu. }, ale přesto neobsahuje mnoho prvků, které by bránily vytvoření její AMP verze. Levá část obrázku \ref{originalVSamp} ukazuje, jak vypadá původní DotVVM stránka.
+\url{https://www.nuget.org/packages/DotVVM.AMP/0.1.0.7}}. Jako aplikaci, na které budu převod do AMP prezentovat, jsem zvolil webovou aplikaci, která slouží pro prezentaci portfolia. Konkrétně jsem zvolil stránku, která obsahuje detail projektu. Tuto aplikaci (a konkrétní stránky v rámci aplikace) jsem zvolil z toho důvodu, že je dynamicky generovaná\footnote{View je napsáno obecně pro jakýkoliv projekt a specifické informace o dané referenci jsou doplněné v rámci modelu. }, ale přesto neobsahuje mnoho prvků, které by bránily vytvoření její AMP verze. Levá část obrázku \ref{originalVSamp} ukazuje, jak vypadá původní DotVVM stránka.
 
 \section*{Přidání DotVVM.AMP do projektu}
 Jako první krok je třeba přidat knihovnu DotVVM.AMP do naší aplikace. Nejjednodušší způsob, jak tohoto docílit, je přidat referenci na nuget balík DotVVM.AMP\footref{nuget}. Přidáním tohoto balíku přidáme referenci na knihovnu DotVVM.AMP.
@@ -1045,7 +1045,7 @@ V rámci odstranění komponenty fancybox musíme vyřešit také odstranění j
 
 Na obrázku \ref{originalVSamp} je zobrazeno porovnání obou verzí. Stránky vypadají velmi podobně a jediný na první pohled zřetelný rozdíl je použitý font a mírné odlišnosti v pozici a velikosti obrázků. Další odlišností je absence možnosti zobrazit detail obrázků, kvůli absenci komponenty fancybox.
 
-Jak na testovací sadě příkladů\footnote{ Sada testovacích stránek je dostupná v rámci zdrojového kódu nebo na https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}, tak při použití na reálných aplikacích se ukázalo, že DotVVM.AMP zvládne základní scénáře zcela automaticky.Při použití na komplikovanějších aplikacích je možné pomocí jednoduchých úprav docílit toho, že ke stránkám budou vygenerovány jejich AMP verze i bez výrazných ztrát funkcionality. AMP verze a původní verze nejsou vzhledově zcela identické, ale rozdíly jsou minimální a daly by se odstranit malou úpravou stránky a CSS, které se na danou stránku aplikuje.
+Jak na testovací sadě příkladů\footnote{ Sada testovacích stránek je dostupná v rámci zdrojového kódu nebo na \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak při použití na reálných aplikacích se ukázalo, že DotVVM.AMP zvládne základní scénáře zcela automaticky.Při použití na komplikovanějších aplikacích je možné pomocí jednoduchých úprav docílit toho, že ke stránkám budou vygenerovány jejich AMP verze i bez výrazných ztrát funkcionality. AMP verze a původní verze nejsou vzhledově zcela identické, ale rozdíly jsou minimální a daly by se odstranit malou úpravou stránky a CSS, které se na danou stránku aplikuje.
 
 \chapter{Možnosti dalšího vývoje DotVVM.AMP}
 Přestože DotVVM.AMP je v rámci verze 0.1.0.7 v stavu ve kterém lze tuto knihovnu aplikovat na reálné projekty, tak stále existuje mnoho způsobů jak knihovnu DotVVM.AMP rozšířit.
@@ -1064,7 +1064,7 @@ DotVVM.AMP obsahuje jen základní AMP komponenty. Bylo by dobré vybrat z rozš
 
 
 \subsection{AMP Validator}
-Ve verzi 0.1.0.7 AmpValidator obsahuje ručně přepsané validační pravidla používané technologií AMP. AMP své validační pravidla poskytuje na ve formátu Google Protocol Buffers\footnote{Validační pravidla jsou dostupné na https://github.com/ampproject/amphtml/tree/master/validator}. Ukázka validační definice je uvedena v kódu \ref{protoascii}.  Soubory s těmito variačními pravidly by se daly převést do C\# tříd a validaci provádět na základě takto získaných pravidel. Pro aktualizace validátoru by pak stačilo poskytnout nové validační definice.
+Ve verzi 0.1.0.7 AmpValidator obsahuje ručně přepsané validační pravidla používané technologií AMP. AMP své validační pravidla poskytuje na ve formátu Google Protocol Buffers\footnote{Validační pravidla jsou dostupné na \url{https://github.com/ampproject/amphtml/tree/master/validator}}. Ukázka validační definice je uvedena v kódu \ref{protoascii}\cite{validatorGit}.  Soubory s těmito variačními pravidly by se daly převést do C\# tříd a validaci provádět na základě takto získaných pravidel. Pro aktualizace validátoru by pak stačilo poskytnout nové validační definice.
 
 \begin{lstlisting}[language=html, caption=Ukázka části validačního pravidla pro iframe v rámci protoascii souboru.,label=protoascii,captionpos=t]
 tags: {
@@ -1107,7 +1107,7 @@ tags: {
 \end{lstlisting}
 
 \chapter{Závěr}
-Cílem práce bylo navrhnout a vyvinout knihovnu, která by umožňovala překlad stránek napsaných v technologii DotVVM do technologie AMP. V rámci této práce vznikla knihovna DotVVM.AMP, umožnující vytvořit AMP verzi k již existující DotVVM stránek, která tento cíl plní. DotVVM.AMP jsem otestoval jak na sadě testovacích stránek\footnote{ Sada testovacích stránek je dostupná v rámci zdrojového kódu nebo na https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}, tak na reálné webové aplikaci. Na všech testovaných stránkách se povedlo vytvořit jejich AMP validní verzi bez větších zásahů do původní stránky.
+Cílem práce bylo navrhnout a vyvinout knihovnu, která by umožňovala překlad stránek napsaných v technologii DotVVM do technologie AMP. V rámci této práce vznikla knihovna DotVVM.AMP, umožnující vytvořit AMP verzi k již existující DotVVM stránek, která tento cíl plní. DotVVM.AMP jsem otestoval jak na sadě testovacích stránek\footnote{ Sada testovacích stránek je dostupná v rámci zdrojového kódu nebo na \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak na reálné webové aplikaci. Na všech testovaných stránkách se povedlo vytvořit jejich AMP validní verzi bez větších zásahů do původní stránky.
 
 V rámci DotVVM Virtual Conference byla oznámena budoucí podpora pro AMP v rámci DotVVM. Je tedy pravděpodobné, že bude tato knihovna dále udržovaná a rozvíjena\cite{herceg_2020}.  Doufám, že se do tohoto rozvoje zapojí i další členové DotVVM komunity.
 
