@@ -6,34 +6,34 @@ webových aplikací. Problém nízké rychlosti se navíc postupně zvětšuje, 
 uživatelů, kteří pro přístup k webovým aplikacím používají mobilní zařízení s malým výkonem a nepříliš
 dobrou konektivitou.
 
-V posledních letech se stále častěji můžeme setkat s webovými stránkami, které používají open source technologii \emph{Accelerated Mobile Pages} neboli zkráceně \emph{AMP}, která se snaží problém rychlosti webových aplikací
+V posledních letech se stále častěji můžeme setkat s webovými stránkami, které používají open source technologii Accelerated Mobile Pages neboli zkráceně AMP, která se snaží problém rychlosti webových aplikací
 řešit pomocí omezení složitosti, optimalizací vykreslování (díky fixnímu rozložení), přednačítání webové
-stránky a dalších optimalizací v rámci \emph{AMP distribuční infrastruktury}.
+stránky a dalších optimalizací v rámci AMP distribuční infrastruktury.
 
 Výsledkem všech těchto optimalizací jsou webové stránky, jejichž čas do první interakce\footnote{Čas do první interakce: anglicky se tato metrika nazývá Time to Interactive a vyjadřuje, jak dlouho trvá, než se stránka načte do stavu, kdy je uživatel schopný s ní bez omezení interagovat.} je v nízkých desetinách sekundy. Pro porovnání v roce 2018 průměrně trvalo načtení webové
 stránky 8.66s\cite{TTI}.
 Udržení rychlosti načítání stránky na takto nízkých hranicích ovlivňuje, jak se uživatel po příchodu na naši
 stránku bude chovat (a zda si nerozmyslí, naši stránku vůbec nenavštívit).
 
-Zvýšená rychlost \emph{AMP} stránek má kromě přímých efektů na uživatele také vedlejší efekt na pozici
+Zvýšená rychlost AMP stránek má kromě přímých efektů na uživatele také vedlejší efekt na pozici
 v rámci výsledků vyhledávání a tím i na větší počet návštěvníků.
 
-Jako každá jiná technologie tak i \emph{AMP} technologie není všemocná a pro její použití musí vývojáři
-obětovat většinu interaktivity pomocí \emph{javascriptu}, značně omezit velikost kaskádových stylů a zcela
-vynechat některé zakázané \emph{HTML} tagy. Kvůli těmto omezením jsou cílovými použitími pro \emph{AMP} jednoduché statické stránky, popřípadě značně
+Jako každá jiná technologie tak i AMP technologie není všemocná a pro její použití musí vývojáři
+obětovat většinu interaktivity pomocí javascriptu, značně omezit velikost kaskádových stylů a zcela
+vynechat některé zakázané HTML tagy. Kvůli těmto omezením jsou cílovými použitími pro AMP jednoduché statické stránky, popřípadě značně
 zjednodušené verze stránek plnohodnotných.
 
-Cílem této práce je přinést výše zmiňované výhody technologie \emph{AMP} uživatelům open source webového
-frameworku \emph{DotVVM} založeného na platformě \emph{ASP.NET}.
-Přestože cílovým použitím \emph{DotVVM} jsou složité interaktivní webové aplikace (tedy opak stránek ideálních pro přepis do \emph{AMP}), tak i v rámci těchto aplikací často nalezneme stránky, které jsou z velké části statické, popřípadě se dynamicky skládají na serveru, ale ne už u klienta \cite{DotVVMIntro}. Příkladem takových stránek můžou být úvodní a další veřejné/informační stránky u jinak dynamických webových aplikací. 
+Cílem této práce je přinést výše zmiňované výhody technologie AMP uživatelům open source webového
+frameworku DotVVM založeného na platformě ASP.NET.
+Přestože cílovým použitím DotVVM jsou složité interaktivní webové aplikace (tedy opak stránek ideálních pro přepis do AMP), tak i v rámci těchto aplikací často nalezneme stránky, které jsou z velké části statické, popřípadě se dynamicky skládají na serveru, ale ne už u klienta \cite{DotVVMIntro}. Příkladem takových stránek můžou být úvodní a další veřejné/informační stránky u jinak dynamických webových aplikací. 
 
 \chapter{Co to je AMP?}
 \label{AMP}
-Technologie \emph{AMP} má za cíl zajistit uživatelům velmi rychlé webové stránky nezávisle na tom, kde se
+Technologie AMP má za cíl zajistit uživatelům velmi rychlé webové stránky nezávisle na tom, kde se
 uživatelé nacházejí a jaké zařízení používají.
 
-\emph{AMP} byl původně vydán v roce 2015 společností Google (ve spolupráci s firmou Twitter) pod názvem \emph{Accelerated Mobile Pages} jako odpověď
-na technologii Facebooku s názvem \emph{Instant Articles}. Na rozdíl od \emph{Instant Articles} se \emph{AMP}, díky tomu že je
+AMP byl původně vydán v roce 2015 společností Google (ve spolupráci s firmou Twitter) pod názvem Accelerated Mobile Pages jako odpověď
+na technologii Facebooku s názvem Instant Articles. Na rozdíl od Instant Articles se AMP, díky tomu že je
 open-source, rozšířil mimo platformu zakládající organizace a nyní existují více než dvě miliardy AMP
 stránek~\cite{AMPTurbo}.
 
@@ -41,21 +41,21 @@ Amp zajištuje slibované zvýšení rychlosti pomocí kombinace dvou přístup�
 společnosti Microsoft a~CloudFlare.
 
 \section{Nové typy obsahu, které AMP přináší}
-Kromě celých webových stránek \emph{AMP} podporuje i další nové typy obsahu. Tyto nové formáty přináší novou funkcionalitu a zvýšení rychlosti do domén jako je například email nebo reklama. Žádný z těchto nových formátů se bohužel prozatím nerozšířil mimo Google platformu. Uživatelé se nejčastěji mohou setkat s AMP adds, ale to jen z toho důvodu že \emph{Google AdSense}\footnote{Google AdSence je platforma společnosti Google, která umožnuje si zakoupit reklamní prostor na různých webových stránkách.} je hlavní provozovatel reklamních služeb na internetu.
+Kromě celých webových stránek AMP podporuje i další nové typy obsahu. Tyto nové formáty přináší novou funkcionalitu a zvýšení rychlosti do domén jako je například email nebo reklama. Žádný z těchto nových formátů se bohužel prozatím nerozšířil mimo Google platformu. Uživatelé se nejčastěji mohou setkat s AMP adds, ale to jen z toho důvodu že Google AdSense\footnote{Google AdSence je platforma společnosti Google, která umožnuje si zakoupit reklamní prostor na různých webových stránkách.} je hlavní provozovatel reklamních služeb na internetu.
 \subsection*{AMP Email}
-\emph{Amp Email} umožňuje používat v rámci emailů \emph{AMP} komponenty. Díky tomu mohou emaily obsahovat formuláře, interaktivní grafiku a další prvky, které byly dosud vyhrazené jen pro web. \emph{AMP Email} má formát \emph{HTML} s atributem amp4email. V rámci jednoho \emph{AMP} emailu by měla být vždy posílána i textová a případně webová verze, jinak by nastával problém při starších emailových klientech\cite[Ch.\ 6, p.\ 285]{VzhuruDoAMP}.
-Aktuálně je \emph{AMP Email} podporován jen v klientech:
+Amp Email umožňuje používat v rámci emailů AMP komponenty. Díky tomu mohou emaily obsahovat formuláře, interaktivní grafiku a další prvky, které byly dosud vyhrazené jen pro web. AMP Email má formát HTML s atributem amp4email. V rámci jednoho AMP emailu by měla být vždy posílána i textová a případně webová verze, jinak by nastával problém při starších emailových klientech\cite[Ch.\ 6, p.\ 285]{VzhuruDoAMP}.
+Aktuálně je AMP Email podporován jen v klientech:
 Outlook, Gmail a Mail.ru\cite{EmailSupport}.
 \subsection*{AMP Add}
-Reklamy bez \emph{javascriptu} fungovat skoro nemohou. A přestože pro koncové uživatele by byl web bez reklam ideální, tak z pohledu některých provozovatelů by bylo toto omezení likvidační. \emph{AMP} tento problém řeší pomocí \emph{AMP} komponenty \emph{AMP Add}, které umožnuje vložit do stránky reklamní bannery. Díky tomu, že \emph{AMP} přesně ví které prvky na stránce jsou reklama, tak může zařídit, aby se na tyto pro uživatele nedůležité prvky nečekalo. Stránky, které budou zobrazovány v rámci \emph{AMP Add} musí být vydány schváleným provozovatelem a \emph{HTML} reklamního banneru musí být anotováno atributem \emph{amp4add}\cite[Ch.\ 6, p.\ 280]{VzhuruDoAMP}.
-V lednu 2019 tvořili \emph{AMP} reklamy 12\% všech reklamy v rámci \emph{Google AdSense}\cite{abner_2019}.
+Reklamy bez javascriptu fungovat skoro nemohou. A přestože pro koncové uživatele by byl web bez reklam ideální, tak z pohledu některých provozovatelů by bylo toto omezení likvidační. AMP tento problém řeší pomocí AMP komponenty AMP Add, které umožnuje vložit do stránky reklamní bannery. Díky tomu, že AMP přesně ví které prvky na stránce jsou reklama, tak může zařídit, aby se na tyto pro uživatele nedůležité prvky nečekalo. Stránky, které budou zobrazovány v rámci AMP Add musí být vydány schváleným provozovatelem a HTML reklamního banneru musí být anotováno atributem amp4add\cite[Ch.\ 6, p.\ 280]{VzhuruDoAMP}.
+V lednu 2019 tvořili AMP reklamy 12\% všech reklamy v rámci Google AdSense\cite{abner_2019}.
 \subsection*{AMP Stories}
 AMP Stories jsou celoobrazovkové “prezentace” vizuálně velmi podobné konceptu stories od společnosti Facebook. Tento typ obsahu je určen především pro zpravodajské portály, které jej mohou využít pro vytvoření krátkých
 “prezentací” k danému tématu. Na tyto prezentace poté uživatelé mohou přistoupit po hledání jména
-vydavatele v rámci prohlížeče nebo při hledání k samotné události, kterou \emph{AMP story} popisuje\cite[Ch.\ 6, p.\ 290]{VzhuruDoAMP}.
+vydavatele v rámci prohlížeče nebo při hledání k samotné události, kterou AMP story popisuje\cite[Ch.\ 6, p.\ 290]{VzhuruDoAMP}.
 
 \section{Základní principy technologie AMP}
-Technologie \emph{AMP} se skládá ze dvou hlavních částí: \emph{AMP frameworku} a \emph{AMP distribuční infrastruktury}. 
+Technologie AMP se skládá ze dvou hlavních částí: AMP frameworku a AMP distribuční infrastruktury. 
 
 \begin{table}[H]
 	\caption{Tabulka jednotlivých součástí technologie AMP} 
@@ -73,25 +73,25 @@ Technologie \emph{AMP} se skládá ze dvou hlavních částí: \emph{AMP framewo
 	\label{tab:Součásti technologie AMP}
 \end{table}
 
-Jednotlivé komponenty \emph{AMP frameworku} slouží pro sestavení samotné \emph{AMP} stránky. Na rozdíl od svých
+Jednotlivé komponenty AMP frameworku slouží pro sestavení samotné AMP stránky. Na rozdíl od svých
 ne-AMP ekvivalentů jsou ořezané o některé funkce, při jejichž použití mohou být stránky pomalé a/nebo
 by docházelo k dynamickým změnám rozložení. Pokud by docházelo k dynamickým změnám rozložení,
 tak by nebylo možné provádět prerendering.
 
 
 Prvky distribučního procesu se různými metodami snaží minimalizovat čas potřebný k zobrazení stránky
-uživateli. Distribuční \emph{AMP} infrastrukturu provozují aktuálně Google, Microsoft a CloudFlare\cite[Ch.\ 1, p.\ 49]{VzhuruDoAMP}.
+uživateli. Distribuční AMP infrastrukturu provozují aktuálně Google, Microsoft a CloudFlare\cite[Ch.\ 1, p.\ 49]{VzhuruDoAMP}.
 
 \subsection*{AMP Framework}
-\emph{AMP} stránky jsou tvořeny ve zjednodušeném jazyku \emph{HTML}, který je rozšířený o \emph{AMP} atributy a \emph{AMP}
+AMP stránky jsou tvořeny ve zjednodušeném jazyku HTML, který je rozšířený o AMP atributy a AMP
 komponenty. Omezení se nevyhnulo ani kaskádovým stylům. Jejich velikost je omezena na pouhých
 75\,kB, musí být umístěny přímo v dokumentu a nelze použít všechny typy animací a některé další
 konstrukty CSS.
-Největší omezení \emph{AMP} technologie ale rozhodně představuje absence skoro jakéhokoliv \emph{javascriptu}.
-Kvůli těmto omezením mají \emph{AMP} stránky statický layout. Statický layout umožnuje, aby byla \emph{AMP} stránka před vykreslená návštěvníkovi dříve než se vůbec rozhodne, že na danou stránku chce přistoupit. \emph{AMP Prerendering} je hlavní důvod, proč je \emph{AMP} schopen zobrazit před stránky v čase blížícím se nule\cite{AMP-zero}.
+Největší omezení AMP technologie ale rozhodně představuje absence skoro jakéhokoliv javascriptu.
+Kvůli těmto omezením mají AMP stránky statický layout. Statický layout umožnuje, aby byla AMP stránka před vykreslená návštěvníkovi dříve než se vůbec rozhodne, že na danou stránku chce přistoupit. AMP Prerendering je hlavní důvod, proč je AMP schopen zobrazit před stránky v čase blížícím se nule\cite{AMP-zero}.
 \subsubsection*{AMP Html}
-\emph{AMP Html} vychází z \emph{HTML 5}, je ale značně upravené. Některé základní \emph{HTML} tagy jsou nahrazeny jejich \emph{AMP} variantami a některé jsou zakázány.
-Oproti klasickému \emph{HTML} můžeme \emph{AMP Html} rozeznat podle bezhodnotového atributu s názvem amp (případně emotikonu High Voltage).
+AMP Html vychází z HTML 5, je ale značně upravené. Některé základní HTML tagy jsou nahrazeny jejich AMP variantami a některé jsou zakázány.
+Oproti klasickému HTML můžeme AMP Html rozeznat podle bezhodnotového atributu s názvem amp (případně emotikonu High Voltage).
 
 \begin{lstlisting}[language=html, caption=Ukázka AMP Html,captionpos=t]
 <!doctype html>
@@ -117,12 +117,12 @@ Oproti klasickému \emph{HTML} můžeme \emph{AMP Html} rozeznat podle bezhodnot
 \end{lstlisting}
 
 \smallHeading{Hlavička}
-V rámci hlavičky \emph{AMP} dokumentu je nutné přidat \emph{AMP} knihovnu a amp-boilerplate css\footnote{Plné znění amp-boilerplate css je možné nalézt na \url{https://amp.dev/boilerplate/}}\cite{AMPBoilerplate}.
+V rámci hlavičky AMP dokumentu je nutné přidat AMP knihovnu a amp-boilerplate css\footnote{Plné znění amp-boilerplate css je možné nalézt na \url{https://amp.dev/boilerplate/}}\cite{AMPBoilerplate}.
 
 Toto css má za úkol skrýt stránku, dokud není plně vyrenderované a následně ji pomocí animace prolnutí zobrazit. Díky tomuto je stránka pocitově rychlejší.
-Vynechání těchto dvou prvků by způsobilo nevalidnost \emph{AMP} stránky => amp stránka se nedostane do cache.
+Vynechání těchto dvou prvků by způsobilo nevalidnost AMP stránky => amp stránka se nedostane do cache.
 
-V rámci hlavičky také můžeme přidat odkaz na požadované fonty. V rámci \emph{AMP} stránek jsou povoleny jen fonty dostupné na zdrojích uvedených v tabulce \ref{tab:Tabulka povolených zdrojů fontů}\cite{ampCustomFonts}.
+V rámci hlavičky také můžeme přidat odkaz na požadované fonty. V rámci AMP stránek jsou povoleny jen fonty dostupné na zdrojích uvedených v tabulce \ref{tab:Tabulka povolených zdrojů fontů}\cite{ampCustomFonts}.
 
 \begin{table}[H]
 	\caption{Tabulka povolených poskytovatelů fontů}
@@ -141,7 +141,7 @@ V rámci hlavičky také můžeme přidat odkaz na požadované fonty. V rámci 
 \end{table}
 
 \smallHeading{AMP Html elementy}
-Kvůli požadavku na fixní layout není možné použít všechny \emph{HTML} elementy, některé jsou zakázané \ref{tab: Tabulka zakázaných HTML elementů}, některé byly nahrazeny jejich \emph{AMP} variantami \ref{tab: Tabulka nahrazených AMP elementů} a u jiných je omezena jejich funkcionalita \ref{tab: Tabulka HTML elementů s omezenou funkcionalitou} \cite[p.\ 41]{AMP-ENG-Book}.
+Kvůli požadavku na fixní layout není možné použít všechny HTML elementy, některé jsou zakázané \ref{tab: Tabulka zakázaných HTML elementů}, některé byly nahrazeny jejich AMP variantami \ref{tab: Tabulka nahrazených AMP elementů} a u jiných je omezena jejich funkcionalita \ref{tab: Tabulka HTML elementů s omezenou funkcionalitou} \cite[p.\ 41]{AMP-ENG-Book}.
 
 \begin{table}[H]
 	\caption{Tabulka zakázaných HTML elementů} 
@@ -183,25 +183,25 @@ Kvůli požadavku na fixní layout není možné použít všechny \emph{HTML} e
 \end{table}
 
 \subsubsection*{AMP CSS}
-V rámci \emph{AMP} stránky jsme omezeni pouze na max 75kB (dříve jen 50kB) inline \emph{CSS}\cite[Ch.\ 2 p.\ 100]{VzhuruDoAMP}. Důvodem, proč styly musí být přiloženy v rámci \emph{AMP} stránky, je snaha o minimalizaci počtu potřebných request k tomu, aby mohla být načtena stránka (nebo alespoň části ovlivňující její rozložení). Výjimkou jsou \emph{CSS keyframes}\footnote{CSS keyframes obsahují definice animací.}, které můžou být obsaženy v separátním inline \emph{CSS} elementu s maximální velikostí 500kB\cite{ampHTMLSpec}.
+V rámci AMP stránky jsme omezeni pouze na max 75kB (dříve jen 50kB) inline CSS\cite[Ch.\ 2 p.\ 100]{VzhuruDoAMP}. Důvodem, proč styly musí být přiloženy v rámci AMP stránky, je snaha o minimalizaci počtu potřebných request k tomu, aby mohla být načtena stránka (nebo alespoň části ovlivňující její rozložení). Výjimkou jsou CSS keyframes\footnote{CSS keyframes obsahují definice animací.}, které můžou být obsaženy v separátním inline CSS elementu s maximální velikostí 500kB\cite{ampHTMLSpec}.
 
-Kromě omezení velikosti a nutnosti styly přikládat k hlavnímu dokumentu, \emph{AMP} také zakazuje použití klíčového slova \emph{!important} a stylování \emph{AMP} komponent (selektory cílící na tagy začínající na \emph{-amp-} nebo \emph{i-amp-} )\cite{AMPCss}. Obě tato omezení jsou nutná kvůli tomu, aby~amp byl schopný zajistit, že elementy budou mít předpokládanou velikost.
+Kromě omezení velikosti a nutnosti styly přikládat k hlavnímu dokumentu, AMP také zakazuje použití klíčového slova !important a stylování AMP komponent (selektory cílící na tagy začínající na -amp- nebo i-amp- )\cite{AMPCss}. Obě tato omezení jsou nutná kvůli tomu, aby~amp byl schopný zajistit, že elementy budou mít předpokládanou velikost.
 
-Další omezení, se kterým musí vývojáři bojovat, je zákaz většiny animací. Jediné povolené animace jsou nad vlastnostmi, jejichž animovaní je \emph{GPU-accelerated}, jde tedy o animace nad vlastnostmi \emph{opacity} a \emph{transform}\cite{AMPCss}.
+Další omezení, se kterým musí vývojáři bojovat, je zákaz většiny animací. Jediné povolené animace jsou nad vlastnostmi, jejichž animovaní je GPU-accelerated, jde tedy o animace nad vlastnostmi opacity a transform\cite{AMPCss}.
 
 \subsubsection*{Omezení použití javascriptu}
-Vlastní \emph{javascript} je aktuálně kompletně zakázaný v rámci stránky. Existuje však několik způsobů, jak \emph{javascript} spustit.
+Vlastní javascript je aktuálně kompletně zakázaný v rámci stránky. Existuje však několik způsobů, jak javascript spustit.
 \smallHeading{iframe}
-V rámci \emph{amp-iframe} můžeme používat jakýkoliv \emph{javascript}. Stejně jak u klasického \emph{HTML} \emph{iframe} tak i tady nemůžeme ovlivňovat nic mimo daný \emph{iframe}. Toto řešení se hodí, pokud potřebujeme například zobrazit mapy, apod.
+V rámci amp-iframe můžeme používat jakýkoliv javascript. Stejně jak u klasického HTML iframe tak i tady nemůžeme ovlivňovat nic mimo daný iframe. Toto řešení se hodí, pokud potřebujeme například zobrazit mapy, apod.
 \smallHeading{AMP-script}
-Koncem roku 2019 byla vydaná komponenta \emph{AMP-script}. Tato dodatečná komponenta umožnuje spouštět \emph{javascript} v rámci \emph{Web Workeru}, tento kód běží na pozadí. V rámci tohoto kódu můžeme přidat interaktivitu do stránky například úpravami virtuálního \emph{DOMu} stránky nebo úpravou stavu komponenty \emph{amp-state}.
+Koncem roku 2019 byla vydaná komponenta AMP-script. Tato dodatečná komponenta umožnuje spouštět javascript v rámci Web Workeru, tento kód běží na pozadí. V rámci tohoto kódu můžeme přidat interaktivitu do stránky například úpravami virtuálního DOMu stránky nebo úpravou stavu komponenty amp-state.
 
-V rámci \emph{AMP-script} nejsou povoleny všechny \emph{javascriptové} API (podpora API pro manipulaci s prohlížečem chybí) a některé, jako například metoda \emph{querySelektor}, jsou omezené\cite{amp-script}.
+V rámci AMP-script nejsou povoleny všechny javascriptové API (podpora API pro manipulaci s prohlížečem chybí) a některé, jako například metoda querySelektor, jsou omezené\cite{amp-script}.
 
 \subsection*{Distribuční infrastruktura pro AMP stránky}
 
-Přestože jsme schopni zobrazovat \emph{AMP} stránky bez využití distribučních mechanizmů \emph{AMPu}, tak jsme přišli o výhody přednačítání stránek a dalších optimalizací, za které jsou zodpovědné \emph{AMP Cache} a \emph{AMP Viewer}.
-Bez těchto optimalizací je jediný benefit, který získáme použitím technologie \emph{AMP} ten, že nás tato technologie nutí tvořit jednoduché stránky a omezuje nás ve velikosti externě načítaných zdrojů. Část takto ušetřeného času bychom vzápětí zase ztratili kvůli nutností stažení \emph{AMP} knihovny.
+Přestože jsme schopni zobrazovat AMP stránky bez využití distribučních mechanizmů AMPu, tak jsme přišli o výhody přednačítání stránek a dalších optimalizací, za které jsou zodpovědné AMP Cache a AMP Viewer.
+Bez těchto optimalizací je jediný benefit, který získáme použitím technologie AMP ten, že nás tato technologie nutí tvořit jednoduché stránky a omezuje nás ve velikosti externě načítaných zdrojů. Část takto ušetřeného času bychom vzápětí zase ztratili kvůli nutností stažení AMP knihovny.
 
 \begin{figure}[hbt]
 	\centering
@@ -209,52 +209,52 @@ Bez těchto optimalizací je jediný benefit, který získáme použitím techno
 	\caption{Popis distribuční infrastruktury}
 	\label{Popis Distribuční infrastruktury AMP}
 \end{figure}
-\emph{Amp} distribuční infrastruktura se skládá ze dvou hlavních částí: \emph{AMP Cache} a \emph{AMP Vieweru}. Schéma této infrastruktury je znázorněno na obrázku \ref{Popis Distribuční infrastruktury AMP}.
+Amp distribuční infrastruktura se skládá ze dvou hlavních částí: AMP Cache a AMP Vieweru. Schéma této infrastruktury je znázorněno na obrázku \ref{Popis Distribuční infrastruktury AMP}.
 
-\emph{Amp} stránka se do \emph{AMP cache} dostane jen tehdy, je-li validní a provozovatel \emph{AMP cache} usoudí, že se mu vyplatí danou stránku cachovat. Díky umístění stránky v \emph{AMP cache} získáme kromě přiblížení obsahu ke koncovým uživatelům také různé typy optimalizací.
+Amp stránka se do AMP cache dostane jen tehdy, je-li validní a provozovatel AMP cache usoudí, že se mu vyplatí danou stránku cachovat. Díky umístění stránky v AMP cache získáme kromě přiblížení obsahu ke koncovým uživatelům také různé typy optimalizací.
 
-Amp Viewer má na starosti prerendering stránek z \emph{AMP Cache}. Dalo by se říci, že je webovou aplikací obalující naší \emph{AMP stránku}. 
+Amp Viewer má na starosti prerendering stránek z AMP Cache. Dalo by se říci, že je webovou aplikací obalující naší AMP stránku. 
 
 \subsubsection*{AMP Cache}
-Základní funkcionalitou \emph{AMP cache} je poskytovat \emph{Content Delivery Network}\footnote{Content Delivery Network je služba, která umožnuje, aby se externí obsah stahoval ze serveru, který je blíže k cílovému uživateli.} pro \emph{AMP} stránky. Stránky uložené v \emph{AMP Cache} jsou poté přístupné pomocí \emph{AMP Vieweru}.
-Kromě této základní funkcionality \emph{AMP Cache} také poskytuje mechanismy pro validaci a optimalizaci \emph{AMP} stránek.
+Základní funkcionalitou AMP cache je poskytovat Content Delivery Network\footnote{Content Delivery Network je služba, která umožnuje, aby se externí obsah stahoval ze serveru, který je blíže k cílovému uživateli.} pro AMP stránky. Stránky uložené v AMP Cache jsou poté přístupné pomocí AMP Vieweru.
+Kromě této základní funkcionality AMP Cache také poskytuje mechanismy pro validaci a optimalizaci AMP stránek.
 
 \smallHeading{Validace}
-Validace probíhá před samotným zařazením \emph{AMP} stránky do cache a její výsledek rozhoduje o tom, jestli bude do cache zařazena.
-\emph{AMP} validace kontroluje, zda není porušeno některé z omezení a požadavků \emph{AMP frameworku}. Například zda stránka obsahuje jen validní elementy nebo zda obsahuje \emph{AMP} JS a CSS boiler plate.\cite{AMPCache}.
+Validace probíhá před samotným zařazením AMP stránky do cache a její výsledek rozhoduje o tom, jestli bude do cache zařazena.
+AMP validace kontroluje, zda není porušeno některé z omezení a požadavků AMP frameworku. Například zda stránka obsahuje jen validní elementy nebo zda obsahuje AMP JS a CSS boiler plate.\cite{AMPCache}.
 
 \smallHeading{Optimalizace}
-Po zařazení \emph{AMP} stránky do cache probíhají dodatečné optimalizace obsahu.
-Proběhne úprava \emph{HTML}, během které dojde k odstranění prázdných znaků a komentářů, a stránka se upraví tak, aby nebylo možné provést \emph{Cross-site scripting}\cite{whyAMPCache}.
-Obrázky jsou zkomprimovány a jsou z nich odstraněna nepotřebná metadata. Pokud je to možné, dojde ke konverzi na \emph{WebP} formát a ke generaci \emph{srcsetů}.
-Externí zdroje jsou anotovány prefetch značkami, toto umožní \emph{AMP Prerender}\footnote{Prerender: vykreslení stránky nebo její části ještě předtím, než si uživatel o obsah této stránky zažádá.}.
-Nakonec dojde k agresivní minifikaci\footnote{Minifikace: odstranění nepotřebných prvků (mezery, komentáře,..) ze zdrojového kódu. Také může například docházet ke zkrácení názvů proměnných nebo funkcí.} \emph{HTML} a \emph{CSS}.
+Po zařazení AMP stránky do cache probíhají dodatečné optimalizace obsahu.
+Proběhne úprava HTML, během které dojde k odstranění prázdných znaků a komentářů, a stránka se upraví tak, aby nebylo možné provést Cross-site scripting\cite{whyAMPCache}.
+Obrázky jsou zkomprimovány a jsou z nich odstraněna nepotřebná metadata. Pokud je to možné, dojde ke konverzi na WebP formát a ke generaci srcsetů.
+Externí zdroje jsou anotovány prefetch značkami, toto umožní AMP Prerender\footnote{Prerender: vykreslení stránky nebo její části ještě předtím, než si uživatel o obsah této stránky zažádá.}.
+Nakonec dojde k agresivní minifikaci\footnote{Minifikace: odstranění nepotřebných prvků (mezery, komentáře,..) ze zdrojového kódu. Také může například docházet ke zkrácení názvů proměnných nebo funkcí.} HTML a CSS.
 
 \smallHeading{Aktualizace}
-Standardně \emph{AMP cache} provádí aktualizace uložených stránek dle principu \emph{stale-while-revalidate}, tzn. že pokud si uživatel vyžádá dokument, o kterém si\emph{AMP cache} myslí, že je neplatný (například  je překročená \emph{Max-Age} hlavička), tak mu \emph{AMP cache} předá tuto starou verzi a zažádá si o aktualizace, takže další uživatel dostane již verzi novou\cite{AMPUpdate}.
-Majitel domény, v rámci které je \emph{AMP} stránka hostovaná, může také “manuálně“ zažádat o aktualizaci stránky pomocí \emph{update-cache} dotazu. Tento dotaz musí být podepsán privátním \emph{RSA} klíčem asociovaným s danou doménou\cite{AMPUpdateUrl}.
+Standardně AMP cache provádí aktualizace uložených stránek dle principu stale-while-revalidate, tzn. že pokud si uživatel vyžádá dokument, o kterém siAMP cache myslí, že je neplatný (například  je překročená Max-Age hlavička), tak mu AMP cache předá tuto starou verzi a zažádá si o aktualizace, takže další uživatel dostane již verzi novou\cite{AMPUpdate}.
+Majitel domény, v rámci které je AMP stránka hostovaná, může také “manuálně“ zažádat o aktualizaci stránky pomocí update-cache dotazu. Tento dotaz musí být podepsán privátním RSA klíčem asociovaným s danou doménou\cite{AMPUpdateUrl}.
 
 \subsubsection*{AMP Viewer}
-\emp{AMP Viewer} je prostředí, ve kterém běží jednak kód hostované \emph{AMP} stránky, tak z části kód samotného \emph{AMP Vieweru}. Hlavní úlohou AMP Vieweru je optimalizaci zobrazení \emph{AMP} stránky a o její prerendering.
+\emp{AMP Viewer} je prostředí, ve kterém běží jednak kód hostované AMP stránky, tak z části kód samotného AMP Vieweru. Hlavní úlohou AMP Vieweru je optimalizaci zobrazení AMP stránky a o její prerendering.
 
 \smallHeading{AMP Prerendering}
-Prerendering probíhá u \emph{AMP} stránek, o kterých si poskytovatel \emph{AMP Vieweru} myslí, že na ně budeme chtít přistoupit, ještě předtím, než na ně přistoupíme, tzn. že v jednu chvíli může být předpřipraveno více stránek. V jednu chvíli probíhá \emph{prerendering} jen pro jednu stránku. 
+Prerendering probíhá u AMP stránek, o kterých si poskytovatel AMP Vieweru myslí, že na ně budeme chtít přistoupit, ještě předtím, než na ně přistoupíme, tzn. že v jednu chvíli může být předpřipraveno více stránek. V jednu chvíli probíhá prerendering jen pro jednu stránku. 
 \begin{gatger}
 \begin{enumerate}
-    \item \emph{AMP Viewer} stáhne \emph{AMP HTML} z \emph{AMP Cache}
-    \item Načte potřebné \emph{JS} knihovny
+    \item AMP Viewer stáhne AMP HTML z AMP Cache
+    \item Načte potřebné JS knihovny
     \item Stáhne obrázky a další externí obsah vhodný pro dané zařízení. \\
     Dochází ke stažení jen toho obsahu, který se skutečně uživateli zobrazí okamžitě po příchodu na stránku\cite{ampConf}.
 \end{enumerate}
 \end{gatger}
 \smallHeading{Nevýhody AMP Vieweru}
-Z důvodu zobrazení naší \emph{AMP} stránky v rámci \emph{AMP Vieweru} dochází k tomu, že adresa, na které se uživatel nachází, nepřísluší naší stránce, ale je to adresa \emph{AMP Vieweru}. Toto \emph{AMP Viewer} aktuálně, pouze částečně, řeší pomocí falešného navigačního baru, který zobrazuje skutečnou zdrojovou adresu. Toto chování může zjednodušovat \emph{phishing} útoky\cite[Ch.\ 3, p.\ 50]{VzhuruDoAMP}.
-Řešením tohoto problému je technologie \emph{Signed HTTP Exchange}, která umožní oddělit autora/zdroj obsahu od jeho poskytovatele\cite[Ch.\ 3, p.\ 51]{VzhuruDoAMP}.
+Z důvodu zobrazení naší AMP stránky v rámci AMP Vieweru dochází k tomu, že adresa, na které se uživatel nachází, nepřísluší naší stránce, ale je to adresa AMP Vieweru. Toto AMP Viewer aktuálně, pouze částečně, řeší pomocí falešného navigačního baru, který zobrazuje skutečnou zdrojovou adresu. Toto chování může zjednodušovat phishing útoky\cite[Ch.\ 3, p.\ 50]{VzhuruDoAMP}.
+Řešením tohoto problému je technologie Signed HTTP Exchange, která umožní oddělit autora/zdroj obsahu od jeho poskytovatele\cite[Ch.\ 3, p.\ 51]{VzhuruDoAMP}.
 \chapter{DotVVM}
-\emph{DotVVM} je \emph{open source MVVM}\footnote{MVVM: návrhový vzor model - view - viewmodel.} webový framework\cite{DotVVMIntro}. \emph{Backend} část je založená na technologii \emph{ASP.NET} (případně na její \emph{.NET Core} variantě). Frontend je založený na značně upravené verzi \emph{javascriptové} knihovny \emph{Knockout}. Díky tomu, že \emph{DotVVM} pokrývá \emph{frontend} i \emph{backend}, jsme schopni psát relativně komplexní aplikace jen s použitím jazyka \emph{C\#} (popřípadě jiného jazyka z platformy \emph{.NET}) a jazyka \emph{DotHtml}\footnote{DotHtml: HTML rozšířené o nové tagy, vazby na ViewModel a předpisy vazby DotHtml na Viewmodel.}. Z velké části se tak vyhneme psaní javascriptu pro běžné a repetetivní úkony, jako například komunikace se serverem a mapování dat mezi formáty, které se používají na backendu a frontendu.
-Díky těmto vlastnostem a snadné rozšiřitelnosti \emph{DotVVM} o vlastní komponenty a komponenty třetích stran, je programátor se znalostí platformy \emph{.NET} schopen velmi rychle vytvořit v~\emph{DotVVM} aplikaci.
+DotVVM je open source MVVM\footnote{MVVM: návrhový vzor model - view - viewmodel.} webový framework\cite{DotVVMIntro}. Backend část je založená na technologii ASP.NET (případně na její .NET Core variantě). Frontend je založený na značně upravené verzi javascriptové knihovny Knockout. Díky tomu, že DotVVM pokrývá frontend i backend, jsme schopni psát relativně komplexní aplikace jen s použitím jazyka C\# (popřípadě jiného jazyka z platformy .NET) a jazyka DotHtml\footnote{DotHtml: HTML rozšířené o nové tagy, vazby na ViewModel a předpisy vazby DotHtml na Viewmodel.}. Z velké části se tak vyhneme psaní javascriptu pro běžné a repetetivní úkony, jako například komunikace se serverem a mapování dat mezi formáty, které se používají na backendu a frontendu.
+Díky těmto vlastnostem a snadné rozšiřitelnosti DotVVM o vlastní komponenty a komponenty třetích stran, je programátor se znalostí platformy .NET schopen velmi rychle vytvořit v~DotVVM aplikaci.
 
-\emph{DotVVM} je vhodný převážně pro tvorbu \emph{Line of Business} aplikací\footnote{Line of Business aplikace: Rozsáhlé informační systémy, které obsahují velké množství formulářů, tabulek, atd.}\cite{DotVVMIntro}. Pro čistě statické prezentační weby většinou nepřináší dostatek benefitů, které by vyvážily snížení rychlosti oproti stránkám používajícím kombinaci \emph{HTML} a jednoduchého \emph{javascriptu}. Ve chvílích, kdy ale potřebujeme mít v rámci \emph{DotVVM Line of Business} aplikace prezentační stránku, se může vyplatit i na tyto stránky použít \emph{DotVVM}. Pro tento typ stránek by měl sloužit překlad \emph{DotVVM} stránek do technologie \emph{AMP}. Díky \emph{AMPu} odstraníme problém rychlosti u \emph{DotVVM} stránek bez příliš velkých nákladů na implementaci.
+DotVVM je vhodný převážně pro tvorbu Line of Business aplikací\footnote{Line of Business aplikace: Rozsáhlé informační systémy, které obsahují velké množství formulářů, tabulek, atd.}\cite{DotVVMIntro}. Pro čistě statické prezentační weby většinou nepřináší dostatek benefitů, které by vyvážily snížení rychlosti oproti stránkám používajícím kombinaci HTML a jednoduchého javascriptu. Ve chvílích, kdy ale potřebujeme mít v rámci DotVVM Line of Business aplikace prezentační stránku, se může vyplatit i na tyto stránky použít DotVVM. Pro tento typ stránek by měl sloužit překlad DotVVM stránek do technologie AMP. Díky AMPu odstraníme problém rychlosti u DotVVM stránek bez příliš velkých nákladů na implementaci.
 
 \section{Návrhový vzor MVVM}
 MVVM je návrhový vzor který zajišťuje separaci kódu popisujícího jak data zobrazovat od kódu který s nimi manipuluje. Návrhový vzor MVVM se skládá ze tří hlavních částí: \textbf{M}odelu,\textbf{V}iew a \textbf{V}iew\textbf{M}odelu
@@ -275,18 +275,18 @@ Kromě tří hlavních částí MVVM obsahuje také komponentu, nazývanou Binde
 
 \section{DotVVM ViewModel}
 
-DotVVM ViewModel je \emph{C\#} třída dědící od \emph{DotvvmViewModelBase}, která na straně serveru reprezentuje data, které jsou klientské straně zobrazována, a akce, které je možné provádět.
-Díky tomu, že viewmodel musí být jak pro přenos ze serveru na klienta, tak pro přenos zpátky \emph{serializován}, je nutné, aby všechna data, která potřebujeme u klienta, byla definována jako public vlastnosti. Také je nutné, aby veškeré objekty, které chceme poslat na klienta, měly bezparametrický \emph{konstruktor}.
-Akce\footnote{Akce jsou v rámci DotVVM nazývané Commands.\cite{DotVVM-VM}}, které může stránka spouštět, jsou ve \emph{viewmodelu} definovány jako veřejné metody.
+DotVVM ViewModel je C\# třída dědící od DotvvmViewModelBase, která na straně serveru reprezentuje data, které jsou klientské straně zobrazována, a akce, které je možné provádět.
+Díky tomu, že viewmodel musí být jak pro přenos ze serveru na klienta, tak pro přenos zpátky serializován, je nutné, aby všechna data, která potřebujeme u klienta, byla definována jako public vlastnosti. Také je nutné, aby veškeré objekty, které chceme poslat na klienta, měly bezparametrický konstruktor.
+Akce\footnote{Akce jsou v rámci DotVVM nazývané Commands.\cite{DotVVM-VM}}, které může stránka spouštět, jsou ve viewmodelu definovány jako veřejné metody.
 
-Bázová třída \emph{DotvvmViewModelBase} zajišťuje, že viewmodel bude mít přístup k objektu \emph{Context}, který obsahuje například informace o příchozím \emph{HTTP} požadavku nebo informace o tom, zda je uživatel přihlášený.
-Tato bázová třída také definuje virtuální metody \emph{Init}, \emph{Load} a \emph{Prerender}, které jsou volány v různých fázích životního cyklu stránky. Viz kapitola \ref{lifecycle}.
+Bázová třída DotvvmViewModelBase zajišťuje, že viewmodel bude mít přístup k objektu Context, který obsahuje například informace o příchozím HTTP požadavku nebo informace o tom, zda je uživatel přihlášený.
+Tato bázová třída také definuje virtuální metody Init, Load a Prerender, které jsou volány v různých fázích životního cyklu stránky. Viz kapitola \ref{lifecycle}.
 
-\emph{DotVVM Viewmodel} také podporuje použití validačních a autorizačních atributů.
+DotVVM Viewmodel také podporuje použití validačních a autorizačních atributů.
 
-Na jednotlivých vlastnostech jsme schopni pomocí standartních validačních atributů zajistit, že nedojde ke spuštění specifických akcí, pokud nejsou data ve \emph{viewmodelu} validní\cite{DotVVM-Validation}. 
+Na jednotlivých vlastnostech jsme schopni pomocí standartních validačních atributů zajistit, že nedojde ke spuštění specifických akcí, pokud nejsou data ve viewmodelu validní\cite{DotVVM-Validation}. 
 
-To, že je uživatel autorizovaný k přístupu k danému viewmodelu, můžeme zajistit tak, že \emph{viewmodel} anotujeme autorizačním atributem. Autorizaci můžeme provádět nejen na úrovni celého \emph{viewmodelu}, ale i na úrovni jednotlivých metod \cite{DotvvmAuth}. V ukázce \ref{DotvvmVMDemo} je uveden příklad viewmodelu s třemi vlastnostmi a jednou akcí.
+To, že je uživatel autorizovaný k přístupu k danému viewmodelu, můžeme zajistit tak, že viewmodel anotujeme autorizačním atributem. Autorizaci můžeme provádět nejen na úrovni celého viewmodelu, ale i na úrovni jednotlivých metod \cite{DotvvmAuth}. V ukázce \ref{DotvvmVMDemo} je uveden příklad viewmodelu s třemi vlastnostmi a jednou akcí.
 
 \begin{lstlisting}[language=c#, caption=Ukázka DotVVM Viewmodelu,label=DotvvmVMDemo,captionpos=t]
 public class ExampleViewmodel : DotvvmViewModelBase
@@ -305,7 +305,7 @@ public class ExampleViewmodel : DotvvmViewModelBase
 
 
 \section{DotVVM View}
-\emph{DotVVM View} je stránka napsaná v jazyce \emph{DotHtml}.\emph{DotHtml} je \emph{HTML} rozšířeném o vlastní komponenty (v ukázce \ref{DotVVMView}\emph{ <dot:TextBox \ldots />} , \emph{<dot:Literal \ldots />} a \emph{<dot:Button \ldots />} ) a takzvaný \emph{Binding} systém, který umožnuje definovat vztah na vlastnost / metodu ve \emph{viewmodelu}.
+DotVVM View je stránka napsaná v jazyce DotHtml.DotHtml je HTML rozšířeném o vlastní komponenty (v ukázce \ref{DotVVMView} <dot:TextBox \ldots /> , <dot:Literal \ldots /> a <dot:Button \ldots /> ) a takzvaný Binding systém, který umožnuje definovat vztah na vlastnost / metodu ve viewmodelu.
 
 \begin{lstlisting}[language=html, caption=Ukázka DotHtml,captionpos=t,label=DotVVMView]
 @viewModel  TestSamples.Common.ViewModels.ExampleViewmodel, TestSamples.Common
@@ -329,9 +329,9 @@ public class ExampleViewmodel : DotvvmViewModelBase
     V rámci DotHtml je možné používat "šablony"\footnote{DotVVM masterpage}, které nám umožňuji složit výslednou stránku z více částí. Takto můžeme například sdílet hlavičku stránky. V případě použití tohoto systému jsou na stránkách které používají nějakou šablonu namísto celého DotHtml obsaženy jen sekce\footnote{Každá šablona obsahuje ve své hlavní stránce komponenty ContentPlaceholder, které specifikují, že na toto místo bude dosazen kód, který musí být obsažen ve všech stránkách, které tuto šablonu používají. Kód k doplnění je obalen komponentou Content která specifikuje že její obsah patří na určité místo v dané šabloně.}, které hlavní stránka šablony specifikuje jako obsah k doplnění.
 
 \subsection*{Komponenty}
-\emph{DotVVM} komponenty jsou v rámci View zaznačeny jako \emph{HTML} tag, jehož název se skládá z názvu skupiny komponent a názvu vlastní komponenty, tyto dva údaje jsou odděleny dvojtečkou. Za takto složeným názvem následují jednotlivá nastavení dané komponenty. Tato nastavení můžou být rovnou specifikována v rámci \emph{view}, nebo pomocí \emph{binding} systému se můžou odkazovat na hodnotu ve \emph{viewmodelu}. Každá komponenta také může mít ve svém otevíracím tagu klasické \emph{HTML} atributy. 
+DotVVM komponenty jsou v rámci View zaznačeny jako HTML tag, jehož název se skládá z názvu skupiny komponent a názvu vlastní komponenty, tyto dva údaje jsou odděleny dvojtečkou. Za takto složeným názvem následují jednotlivá nastavení dané komponenty. Tato nastavení můžou být rovnou specifikována v rámci view, nebo pomocí binding systému se můžou odkazovat na hodnotu ve viewmodelu. Každá komponenta také může mít ve svém otevíracím tagu klasické HTML atributy. 
 
-\emph{HTML} komponenty, které do stránky přidávají dynamické chování, jsou v \emph{DotVVM} v základu tvořeny samostatnými \emph{DotVVM} komponentami (například \emph{dot:TextBox},\emph{dot:Button} nebo \emph{dot:GridView}), další balíky komponent lze dokoupit (\emph{DotVVM Bootstrap}, \emph{DotVVM BusinessPack}) nebo také existují komunitou spravované balíky komponent. Na každém větším projektu také většinou vznikají komponenty, které jsou specifické pro daný projekt.
+HTML komponenty, které do stránky přidávají dynamické chování, jsou v DotVVM v základu tvořeny samostatnými DotVVM komponentami (například dot:TextBox,dot:Button nebo dot:GridView), další balíky komponent lze dokoupit (DotVVM Bootstrap, DotVVM BusinessPack) nebo také existují komunitou spravované balíky komponent. Na každém větším projektu také většinou vznikají komponenty, které jsou specifické pro daný projekt.
 
 \subsubsection{CodeOnly controls}
 Vzhled a nastavení komponenty jsou definovány v rámci C\# kódu.\newline
@@ -346,8 +346,8 @@ Vzhled komponenty je tvořen pomocí manuálního složení výsledného stromu 
  
 \subsection*{Binding systém}
 \label{DotVVMBinding}
-Pro napojení \emph{View} na \emph{Viewmodel} se používá \emph{binding} systém. Tento systém podporuje přenos hodnot definovaných ve veřejných vlastnostech uvnitř \emph{viewmodelu} do \emph{view} a také volání veřejných metod ve \emph{viewmodelu}.
-Binding systém se zapisuje ve formátu “\emph{{typBindingu: vlastnost/metoda()}}”\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v tabulce \ref{tab: Tabulka typů bindingu}.
+Pro napojení View na Viewmodel se používá binding systém. Tento systém podporuje přenos hodnot definovaných ve veřejných vlastnostech uvnitř viewmodelu do view a také volání veřejných metod ve viewmodelu.
+Binding systém se zapisuje ve formátu “{typBindingu: vlastnost/metoda()}”\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v tabulce \ref{tab: Tabulka typů bindingu}.
 
 \begin{table}[H]
 	\caption{Tabulka typů bindingu} 
@@ -372,8 +372,8 @@ Na straně klienta se používá javascriptový framework knockout.js . DotVVM /
 
 Kromě přímého využití hodnot ve viewmodelu, také můžeme do napojení typu value zapsat pravdivostní výraz. Takto můžeme například na základě toho, jestli některá z vlastností má námi vyžadovanou hodnotu nebo skrývat / zobrazovat elementy. Také je možné v těchto situacích využívat ternární operátory a další jednoduché operace jako například zřetězení. 
 \section{DotVVM Route Table}
-Ke každé \emph{DotVVM} stránce by měl být přiřazen minimálně jeden záznam v \emph{DotVVM route table}\cite{DotVVM-Routing}. Díky tomuto záznamu \emph{DotVVM} dokáže z \emph{URL} příchozího požadavku určit, které \emph{DotVVM View} je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní \emph{DotVVM presenter}. Využití jiného, než defaultního \emph{presenteru} se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v ukázce \ref{routeTableAdd}.
-\begin{lstlisting}[language=C#, caption=Ukázka přidání záznamu do DotVVM route table v rámci \emph{DotvvmStartup.cs}.,label=routeTableAdd,captionpos=t]
+Ke každé DotVVM stránce by měl být přiřazen minimálně jeden záznam v DotVVM route table\cite{DotVVM-Routing}. Díky tomuto záznamu DotVVM dokáže z URL příchozího požadavku určit, které DotVVM View je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní DotVVM presenter. Využití jiného, než defaultního presenteru se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v ukázce \ref{routeTableAdd}.
+\begin{lstlisting}[language=C#, caption=Ukázka přidání záznamu do DotVVM route table v rámci DotvvmStartup.cs.,label=routeTableAdd,captionpos=t]
 config.RouteTable.Add(
     // nazev cesty
     "Example",
@@ -473,7 +473,7 @@ Některé prostředky jsou nutné pro správný běh DotVVM stránky, a proto js
 Většinu těchto prostředků bude potřeba v rámci DotVVM.AMP zakázat.
 \section{Životní cyklus DotVVM stránek}
 \label{lifecycle}
-Životní cyklus \emph{DotVVM stránky} se liší na základě toho, jestli jde o první požadavek na stránku (\emph{GET}), nebo o požadavek na vykonání nějaké akce (\emph{POST})\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v obrázku \ref{Get a Post v DotVVM}.
+Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o první požadavek na stránku (GET), nebo o požadavek na vykonání nějaké akce (POST)\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v obrázku \ref{Get a Post v DotVVM}.
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[width=1\textwidth]{obrazky-figures/DotVVM_lifecycle.png}\hfill
