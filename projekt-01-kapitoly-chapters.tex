@@ -495,10 +495,10 @@ Každé DotHtml je přeloženo do stromové struktury a následně je z tohoto s
     \item Zavolání metody OnPageInitializedAsync na zaregistrovaných filterch typu IViewModelActionFilter\footnote{\label{ActionFilterNote}ActionFilter: Třída implementující rozhraní IActionFilter, která umožňuje provádění dodatečných akcí během kompilace a inicialize DotVVM stránky. }.
     \item Vygenerovanému stromu se nastaví DataContext\footnote{\label{DataContext}DataContext: Reference na objekt ze které se budou brát všechny navázané vlastnosti.}.
     \item Zavolání OnPreInit na jednotlivých komponentách.
-    \item Vygenerovanému stromu se nastaví DataContext\footref{DataContext}.
     \item Zavolání Init metody na viewmodelu.
     \item Zavolání OnInit na jednotlivých komponentách.
     \item Zavolání metody OnViewModelCreatedAsync na zaregistrovaných filtrech typu IPageActionFilter\footref{ActionFilterNote}.
+    \pagebreak
     \begin{multicols}{2}
         První request.
         \begin{enumerate}[label*=\arabic*.]
