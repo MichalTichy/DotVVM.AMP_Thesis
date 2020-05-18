@@ -373,6 +373,7 @@ Na straně klienta se používá javascriptový framework knockout.js . DotVVM /
 Kromě přímého využití hodnot ve viewmodelu, také můžeme do napojení typu value zapsat pravdivostní výraz. Takto můžeme například na základě toho, jestli některá z vlastností má námi vyžadovanou hodnotu nebo skrývat / zobrazovat elementy. Také je možné v těchto situacích využívat ternární operátory a další jednoduché operace jako například zřetězení. 
 \section{DotVVM Route Table}
 Ke každé DotVVM stránce by měl být přiřazen minimálně jeden záznam v DotVVM route table\cite{DotVVM-Routing}. Díky tomuto záznamu DotVVM dokáže z URL příchozího požadavku určit, které DotVVM View je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní DotVVM presenter. Využití jiného než defaultního presenteru se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v ukázce \ref{routeTableAdd}.
+\pagebreak
 \begin{lstlisting}[language=C#, caption=Ukázka přidání záznamu do DotVVM route table v rámci DotvvmStartup.cs.,label=routeTableAdd,captionpos=t]
 config.RouteTable.Add(
     // nazev cesty
@@ -447,30 +448,24 @@ context.ResourceManager.AddRequiredResource("bootstrap-css");
 <dot:RequiredResource Name="bootstrap-css" />
 
 \end{lstlisting}
+\pagebreak
 Některé prostředky jsou nutné pro správný běh DotVVM stránky, a proto jsou zaregistrovány a vyžadovány automaticky.
 
 \begin{itemize}
-    \item dotvvm
-    
+  \setlength\itemsep{0.2em}
+    \item dotvvm\newline
     Esenciální množina funkcí, které jsou požadované pro korenktní běh DotVVM stránky.
-    \item dotvvm.debug
-    
+    \item dotvvm.debug\newline
     Pomocný kód, který usnadňuje ladění DotVVM stránek. Tento prostředek je obsažen jen v rámci Debug módu.
-    
-    \item dotvvm.fileUpload-css
+    \item dotvvm.fileUpload-css\newline
     Css styly pro fileupload komponentu.
-    
-    \item knockout
-    
+    \item knockout\newline
     Upravená verze Knockout.JS.
-    \item globalize
-    
+    \item globalize\newline
     Upravená verze Globalize.JS.
     \item globalize:\textit{JAZYK}
-    
     Informace o formátu data a času pro aktuální jazyk.
 \end{itemize}
-Většinu těchto prostředků bude potřeba v rámci DotVVM.AMP zakázat.
 \section{Životní cyklus DotVVM stránek}
 \label{lifecycle}
 Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o první požadavek na stránku (GET), nebo o požadavek na vykonání nějaké akce (POST)\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v obrázku \ref{Get a Post v DotVVM}.
@@ -481,7 +476,7 @@ Většinu těchto prostředků bude potřeba v rámci DotVVM.AMP zakázat.
 	\label{Get a Post v DotVVM}
 \end{figure}
 
-Každé DotHtml je přeloženo do stromové struktury a následně je z tohoto stromu vygenerováno výsledné HTML, které se odešle jako odpověď na klientský dotaz.
+Každé DotHtml je přeloženo do stromové struktury a následně je z tohoto stromu vygenerováno výsledné HTML, které se odešle jako odpověď na klientský dotaz. Po každé fázi generování HTML se volají metody, do kterých může uživatel doplnit vlastní logiku. Tyto metody se volají na celém viewmodelu, a na každé komponentě.
 
 \begin{enumerate}
     \item Do příslušného DotVVM presenteru dojde request od klienta. Výběr tohoto presenteru zajišťuje DotVVM routing.
@@ -996,7 +991,7 @@ Pokud by byla daná stránka dostatečně jednoduchá, tak by nám výše zmín�
 
 Ideální je začít od šablon, které stránka používá, protože změny v šablonách se projeví na více místech. V našem případě v šabloně, kterou naše stránka používá je třeba upravit skripty, které se do stránky přidávají v rámci hlavičky. Tento problém vyřešíme pomocí nastavení attached property Amp.Exclude na true na Html script elementech. Tímto zajistíme, že dané elementy nebudou v rámci AMP verze vygenerované.
 
-Další krok je úprava komponenty navigační bar. Problémem v této komponentě je, že u loga na její levé straně musíme specifikovat jeho velikost. Dané logo je vektorové\footnote{Vektorová grafika nemá pevně dané rozměry. Je definovaná pomocí křivek, takže je možné ji jakkoliv zvětšit bez ztráty kvality.}, a proto ho nelze určit automaticky. Při prozkoumání původní stránky jsem zjistil, že logo se zobrazuje vždy s šířkou 12rem a výškou 4rem. Tyto dva parametry nastavíme původnímu obrázku pomocí attached properties Amp.Width a Amp.Height. Tuto úpravu můžeme vidět v příkladu \ref{NavEdit}.
+Další krok je úprava komponenty navigační bar. Problémem v této komponentě je, že u loga na její levé straně musíme specifikovat jeho velikost. Dané logo je vektorové\footnote{Vektorová grafika nemá pevně dané rozměry. Je definovaná pomocí křivek, takže je možné ji jakkoliv zvětšit bez ztráty kvality.}, a~proto ho nelze určit automaticky. Při prozkoumání původní stránky jsem zjistil, že logo se zobrazuje vždy s šířkou 12rem a výškou 4rem. Tyto dva parametry nastavíme původnímu obrázku pomocí attached properties Amp.Width a Amp.Height. Tuto úpravu můžeme vidět v příkladu \ref{NavEdit}.
 \begin{lstlisting}[language=html, caption=Upřesnění velikosti obrázku.,label=NavEdit,captionpos=t]
 <img src="/Resources/images/Logos/riganti-logo-white.svg"alt="logo"
      Amp.Width="12rem"
@@ -1006,8 +1001,6 @@ Další krok je úprava komponenty navigační bar. Problémem v této komponent
 Další část, kterou musíme na upravit, je samotné View stránky pro zobrazení detailu projektu. Na této stránce jsou tři prvky, které nelze převést do technologie AMP.
 
 Stránka obsahuje kanonický odkaz\footnote{Kanonický odkaz je odkaz na stejnou stránku na jiné url.}. V rámci AMP stránek musí ale jediný povolený kanonický odkaz směřovat na původní (ne AMP) verzi dané stránky. Z tohoto důvodu tento odkaz odstraníme z AMP verze pomocí attached property Amp.Exclude nastavenou na hodnotu true.
-
-Dále stránka používá pro zobrazení detailu obrázky javascriptovou knihovnu fancybox. V rámci technologie AMP ale nelze javascriptové knihovny použít. AMP framework sice obsahuje dodatečné komponenty s podobnou funkcionalitou, ale pro tuto stránku jsem se rozhodl, že tuto funkcionalitu vynechám pro AMP verzi. Původní zobrazení obrázku obalíme komponentou amp:Exclude. Obsah této komponenty nebude v rámci AMP verze vygenerován. Původní zobrazení obrázků musíme nyní nahradit verzí, která bude kompatabilní s technologií AMP. Pro tento účel do stránky umístíme komponentu amp:Include, která se vyrenderuje pouze v rámci AMP verze. Dovnitř této komponenty můžeme již umístit náhradu za původní zobrazení obrázku. V našem případě to bude HTML link (<a>\ldots</a>) element, který nikam neodkazuje, ale slouží jen k tomu, aby byla zachována struktura elementů z DotVVM verze stránky. Dovnitř tohoto elementu umístíme původní html image element. Detail této úpravy je uveden v ukázce \ref{fancybox}.
 
 \begin{lstlisting}[language=html, caption=Odstranění komponenty fancybox.,label=fancybox,captionpos=t]
 <amp:Exclude>
@@ -1029,7 +1022,11 @@ Dále stránka používá pro zobrazení detailu obrázky javascriptovou knihovn
 
 \end{lstlisting}
 
+Dále stránka používá pro zobrazení detailu obrázky javascriptovou knihovnu fancybox. V rámci technologie AMP ale nelze javascriptové knihovny použít. AMP framework sice obsahuje dodatečné komponenty s podobnou funkcionalitou, ale pro tuto stránku jsem se rozhodl, že tuto funkcionalitu vynechám pro AMP verzi. Původní zobrazení obrázku obalíme komponentou amp:Exclude. Obsah této komponenty nebude v rámci AMP verze vygenerován. Původní zobrazení obrázků musíme nyní nahradit verzí, která bude kompatabilní s technologií AMP. Pro tento účel do stránky umístíme komponentu amp:Include, která se vyrenderuje pouze v rámci AMP verze. Dovnitř této komponenty můžeme již umístit náhradu za původní zobrazení obrázku. V našem případě to bude HTML link (<a>\ldots</a>) element, který nikam neodkazuje, ale slouží jen k tomu, aby byla zachována struktura elementů z DotVVM verze stránky. Dovnitř tohoto elementu umístíme původní html image element. Detail této úpravy je uveden v ukázce \ref{fancybox}.
+
 V rámci odstranění komponenty fancybox musíme vyřešit také odstranění javascriptových knihoven, které sloužily pro zobrazení fancybox komponenty. Tyto skripty obalíme komponentou amp:Exclude.
+
+
 
 
 \section{Zhodnocení výsledků}
@@ -1081,12 +1078,6 @@ tags: {
   attrs: { name: "height" }
   attrs: {
     name: "sandbox"
-  }
-  attrs: {
-    name: "scrolling"
-    value: "auto"
-    value: "yes"
-    value: "no"
   }
   attrs: {
     name: "src"
