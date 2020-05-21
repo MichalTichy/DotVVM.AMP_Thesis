@@ -25,7 +25,7 @@ zjednodušené verze stránek plnohodnotných.
 
 Cílem této práce je přinést výše zmiňované výhody technologie AMP uživatelům open source webového
 frameworku DotVVM založeného na platformě ASP.NET.
-Přestože cílovým použitím DotVVM jsou složité interaktivní webové aplikace (tedy opak stránek ideálních pro přepis do AMP), tak i v~rámci těchto aplikací často nalezneme stránky, které jsou z~velké části statické, popřípadě se dynamicky skládají na serveru, ale ne už u~klienta \cite{DotVVMIntro}. Příkladem takových stránek můžou být úvodní a další veřejné/informační stránky u~jinak dynamických webových aplikací. 
+Přestože cílovým použitím DotVVM jsou složité interaktivní webové aplikace (tedy opak stránek ideálních pro přepis do AMP), tak i v~rámci těchto aplikací často nalezneme stránky, které jsou z~velké části statické, popřípadě se dynamicky skládají na serveru, ale ne už u~klienta~\cite{DotVVMIntro}. Příkladem takových stránek můžou být úvodní a další veřejné/informační stránky u~jinak dynamických webových aplikací. 
 
 \chapter{Co to je AMP?}
 \label{AMP}
@@ -43,16 +43,16 @@ společnosti Microsoft a~CloudFlare.
 \section{Nové typy obsahu, které AMP přináší}
 Kromě celých webových stránek AMP podporuje i další nové typy obsahu. Tyto nové formáty přináší novou funkcionalitu a zvýšení rychlosti do domén jako je například email nebo reklama. Žádný z~těchto nových formátů se bohužel prozatím nerozšířil mimo Google platformu. Uživatelé se nejčastěji mohou setkat s~AMP adds, ale to jen z~toho důvodu že Google AdSense\footnote{Google AdSence je platforma společnosti Google, která umožňuje si zakoupit reklamní prostor na různých webových stránkách.} je hlavní provozovatel reklamních služeb na internetu.
 \subsection*{AMP Email}
-Amp Email umožňuje používat v~rámci emailů AMP komponenty. Díky tomu mohou emaily obsahovat formuláře, interaktivní grafiku a další prvky, které byly dosud vyhrazené jen pro web. AMP Email má formát HTML s~atributem amp4email. V~rámci jednoho AMP emailu by měla být vždy posílána i textová a případně webová verze, jinak by nastával problém při starších emailových klientech\cite[Ch.\ 6, p.\ 285]{VzhuruDoAMP}.
+Amp Email umožňuje používat v~rámci emailů AMP komponenty. Díky tomu mohou emaily obsahovat formuláře, interaktivní grafiku a další prvky, které byly dosud vyhrazené jen pro web. AMP Email má formát HTML s~atributem amp4email. V~rámci jednoho AMP emailu by měla být vždy posílána i textová a případně webová verze, jinak by nastával problém při starších emailových klientech~\cite[Ch.\ 6, p.\ 285]{VzhuruDoAMP}.
 Aktuálně je AMP Email podporován jen v~klientech:
-Outlook, Gmail a Mail.ru\cite{EmailSupport}.
+Outlook, Gmail a Mail.ru~\cite{EmailSupport}.
 \subsection*{AMP Add}
-Reklamy bez javascriptu fungovat skoro nemohou. A~přestože pro koncové uživatele by byl web bez reklam ideální, tak z~pohledu některých provozovatelů by bylo toto omezení likvidační. AMP tento problém řeší pomocí AMP komponenty AMP Add, která umožňuje vložit do stránky reklamní bannery. Díky tomu, že AMP přesně ví, které prvky na stránce jsou reklama, tak může zařídit, aby se na tyto pro uživatele nedůležité prvky nečekalo. Stránky, které budou zobrazovány v~rámci AMP Add, musí být vydány schváleným provozovatelem a HTML reklamního banneru musí být anotováno atributem amp4add\cite[Ch.\ 6, p.\ 280]{VzhuruDoAMP}.
-V~lednu 2019 tvořily AMP reklamy 12\% všech reklam v~rámci Google AdSense\cite{abner_2019}.
+Reklamy bez javascriptu fungovat skoro nemohou. A~přestože pro koncové uživatele by byl web bez reklam ideální, tak z~pohledu některých provozovatelů by bylo toto omezení likvidační. AMP tento problém řeší pomocí AMP komponenty AMP Add, která umožňuje vložit do stránky reklamní bannery. Díky tomu, že AMP přesně ví, které prvky na stránce jsou reklama, tak může zařídit, aby se na tyto pro uživatele nedůležité prvky nečekalo. Stránky, které budou zobrazovány v~rámci AMP Add, musí být vydány schváleným provozovatelem a HTML reklamního banneru musí být anotováno atributem amp4add~\cite[Ch.\ 6, p.\ 280]{VzhuruDoAMP}.
+V~lednu 2019 tvořily AMP reklamy 12\% všech reklam v~rámci Google AdSense~\cite{abner_2019}.
 \subsection*{AMP Stories}
 AMP Stories jsou celoobrazovkové “prezentace” vizuálně velmi podobné konceptu stories od společnosti Facebook. Tento typ obsahu je určen především pro zpravodajské portály, které jej mohou využít pro vytvoření krátkých
 “prezentací” k~danému tématu. Na tyto prezentace poté uživatelé mohou přistoupit po hledání jména
-vydavatele v~rámci prohlížeče nebo při hledání k~samotné události, kterou AMP story popisuje\cite[Ch.\ 6, p.\ 290]{VzhuruDoAMP}.
+vydavatele v~rámci prohlížeče nebo při hledání k~samotné události, kterou AMP story popisuje~\cite[Ch.\ 6, p.\ 290]{VzhuruDoAMP}.
 
 \section{Základní principy technologie AMP}
 Technologie AMP se skládá ze dvou hlavních částí: AMP frameworku a AMP distribuční infrastruktury. 
@@ -88,7 +88,7 @@ komponenty. Omezení se nevyhnulo ani kaskádovým stylům. Jejich velikost je o
 75\,kB, musí být umístěny přímo v~dokumentu a nelze použít všechny typy animací a některé další
 konstrukty CSS.
 Největší omezení AMP technologie ale rozhodně představuje absence skoro jakéhokoliv javascriptu.
-Kvůli těmto omezením mají AMP stránky statický layout. Statický layout umožňuje, aby byla AMP stránka před vykreslená návštěvníkovi dříve než se vůbec rozhodne, že na danou stránku chce přistoupit. AMP Prerendering je hlavní důvod, proč je AMP schopen zobrazit před stránky v~čase blížícím se nule\cite{AMP-zero}.
+Kvůli těmto omezením mají AMP stránky statický layout. Statický layout umožňuje, aby byla AMP stránka před vykreslená návštěvníkovi dříve než se vůbec rozhodne, že na danou stránku chce přistoupit. AMP Prerendering je hlavní důvod, proč je AMP schopen zobrazit před stránky v~čase blížícím se nule~\cite{AMP-zero}.
 \subsubsection*{AMP Html}
 AMP Html vychází z~HTML 5, je ale značně upravené. Některé základní HTML tagy jsou nahrazeny jejich AMP variantami a některé jsou zakázány.
 Oproti klasickému HTML můžeme AMP Html rozeznat podle bezhodnotového atributu s~názvem amp (případně emotikonu High Voltage).
@@ -117,12 +117,12 @@ Oproti klasickému HTML můžeme AMP Html rozeznat podle bezhodnotového atribut
 \end{lstlisting}
 
 \smallHeading{Hlavička}
-V~rámci hlavičky AMP dokumentu je nutné přidat AMP knihovnu a amp-boilerplate css\footnote{Plné znění amp-boilerplate css je možné nalézt na \url{https://amp.dev/boilerplate/}}\cite{AMPBoilerplate}.
+V~rámci hlavičky AMP dokumentu je nutné přidat AMP knihovnu a amp-boilerplate css\footnote{Plné znění amp-boilerplate css je možné nalézt na \url{https://amp.dev/boilerplate/}}~\cite{AMPBoilerplate}.
 
 Toto css má za úkol skrýt stránku, dokud není plně vyrenderované a následně ji pomocí animace prolnutí zobrazit. Díky tomuto je stránka pocitově rychlejší.
 Vynechání těchto dvou prvků by způsobilo nevalidnost AMP stránky => amp stránka se nedostane do cache.
 
-V~rámci hlavičky také můžeme přidat odkaz na požadované fonty. V~rámci AMP stránek jsou povoleny jen fonty dostupné na zdrojích uvedených v~tabulce \ref{tab:Tabulka povolených zdrojů fontů}\cite{ampCustomFonts}.
+V~rámci hlavičky také můžeme přidat odkaz na požadované fonty. V~rámci AMP stránek jsou povoleny jen fonty dostupné na zdrojích uvedených v~tabulce \ref{tab:Tabulka povolených zdrojů fontů}~\cite{ampCustomFonts}.
 
 \begin{table}[H]
 	\caption{Tabulka povolených poskytovatelů fontů}
@@ -141,7 +141,7 @@ V~rámci hlavičky také můžeme přidat odkaz na požadované fonty. V~rámci 
 \end{table}
 
 \smallHeading{AMP Html elementy}
-Kvůli požadavku na fixní layout není možné použít všechny HTML elementy, některé jsou zakázané (viz. tabulka \ref{tab: Tabulka zakázaných HTML elementů}), některé byly nahrazeny jejich AMP variantami (viz. tabulka \ref{tab: Tabulka nahrazených AMP elementů}) a u~jiných je omezena jejich funkcionalita (viz. tabulka \ref{tab: Tabulka HTML elementů s omezenou funkcionalitou})\cite[p.\ 41]{AMP-ENG-Book}.
+Kvůli požadavku na fixní layout není možné použít všechny HTML elementy, některé jsou zakázané (viz. tabulka \ref{tab: Tabulka zakázaných HTML elementů}), některé byly nahrazeny jejich AMP variantami (viz. tabulka \ref{tab: Tabulka nahrazených AMP elementů}) a u~jiných je omezena jejich funkcionalita (viz. tabulka \ref{tab: Tabulka HTML elementů s omezenou funkcionalitou})~\cite[p.\ 41]{AMP-ENG-Book}.
 
 \begin{table}[H]
 	\caption{Tabulka zakázaných HTML elementů} 
@@ -183,11 +183,11 @@ Kvůli požadavku na fixní layout není možné použít všechny HTML elementy
 \end{table}
 
 \subsubsection*{AMP CSS}
-V~rámci AMP stránky jsme omezeni pouze na max 75kB (dříve jen 50kB) inline CSS\cite[Ch.\ 2 p.\ 100]{VzhuruDoAMP}. Důvodem, proč styly musí být přiloženy v~rámci AMP stránky, je snaha o~minimalizaci počtu potřebných request k~tomu, aby mohla být načtena stránka (nebo alespoň části ovlivňující její rozložení). Výjimkou jsou CSS keyframes\footnote{CSS keyframes obsahují definice animací.}, které můžou být obsaženy v~separátním inline CSS elementu s~maximální velikostí 500kB\cite{ampHTMLSpec}.
+V~rámci AMP stránky jsme omezeni pouze na max 75\,kB (dříve jen 50\,kB) inline CSS~\cite[Ch.\ 2 p.\ 100]{VzhuruDoAMP}. Důvodem, proč styly musí být přiloženy v~rámci AMP stránky, je snaha o~minimalizaci počtu potřebných request k~tomu, aby mohla být načtena stránka (nebo alespoň části ovlivňující její rozložení). Výjimkou jsou CSS keyframes\footnote{CSS keyframes obsahují definice animací.}, které můžou být obsaženy v~separátním inline CSS elementu s~maximální velikostí 500\,kB~\cite{ampHTMLSpec}.
 
-Kromě omezení velikosti a nutnosti styly přikládat k~hlavnímu dokumentu, AMP také zakazuje použití klíčového slova !important a stylování AMP komponent (selektory cílící na tagy začínající na -amp- nebo i-amp- )\cite{AMPCss}. Obě tato omezení jsou nutná kvůli tomu, aby~amp byl schopný zajistit, že elementy budou mít předpokládanou velikost.
+Kromě omezení velikosti a nutnosti styly přikládat k~hlavnímu dokumentu, AMP také zakazuje použití klíčového slova !important a stylování AMP komponent (selektory cílící na tagy začínající na -amp- nebo i-amp- )~\cite{AMPCss}. Obě tato omezení jsou nutná kvůli tomu, aby~amp byl schopný zajistit, že elementy budou mít předpokládanou velikost.
 
-Další omezení, se kterým musí vývojáři bojovat, je zákaz většiny animací. Jediné povolené animace jsou nad vlastnostmi, jejichž animování je GPU-accelerated, jde tedy o~animace nad vlastnostmi opacity a transform\cite{AMPCss}.
+Další omezení, se kterým musí vývojáři bojovat, je zákaz většiny animací. Jediné povolené animace jsou nad vlastnostmi, jejichž animování je GPU-accelerated, jde tedy o~animace nad vlastnostmi opacity a transform~\cite{AMPCss}.
 
 \subsubsection*{Omezení použití javascriptu}
 Vlastní javascript je aktuálně kompletně zakázaný v~rámci stránky. Existuje však několik způsobů, jak javascript spustit.
@@ -196,7 +196,7 @@ V~rámci amp-iframe můžeme používat jakýkoliv javascript. Stejně jak u~kla
 \smallHeading{AMP-script}
 Koncem roku 2019 byla vydaná komponenta AMP-script. Tato dodatečná komponenta umožňuje spouštět javascript v~rámci Web Workeru, tento kód běží na pozadí. V~rámci tohoto kódu můžeme přidat interaktivitu do stránky například úpravami virtuálního DOMu stránky nebo úpravou stavu komponenty amp-state.
 
-V~rámci AMP-script nejsou povoleny všechny javascriptové API (podpora API pro manipulaci s~prohlížečem chybí) a některé, jako například metoda querySelektor, jsou omezené\cite{amp-script}.
+V~rámci AMP-script nejsou povoleny všechny javascriptové API (podpora API pro manipulaci s~prohlížečem chybí) a některé, jako například metoda querySelektor, jsou omezené~\cite{amp-script}.
 
 \subsection*{Distribuční infrastruktura pro AMP stránky}
 
@@ -221,18 +221,18 @@ Kromě této základní funkcionality AMP Cache také poskytuje mechanismy pro v
 
 \smallHeading{Validace}
 Validace probíhá před samotným zařazením AMP stránky do cache a její výsledek rozhoduje o~tom, jestli bude do cache zařazena.
-AMP validace kontroluje, zda není porušeno některé z~omezení a požadavků AMP frameworku. Například zda stránka obsahuje jen validní elementy nebo zda obsahuje AMP JS a CSS boiler plate.\cite{AMPCache}.
+AMP validace kontroluje, zda není porušeno některé z~omezení a požadavků AMP frameworku. Například zda stránka obsahuje jen validní elementy nebo zda obsahuje AMP JS a CSS boiler plate.~\cite{AMPCache}.
 
 \smallHeading{Optimalizace}
 Po zařazení AMP stránky do cache probíhají dodatečné optimalizace obsahu.
-Proběhne úprava HTML, během které dojde k~odstranění prázdných znaků a komentářů, a stránka se upraví tak, aby nebylo možné provést Cross-site scripting\cite{whyAMPCache}.
+Proběhne úprava HTML, během které dojde k~odstranění prázdných znaků a komentářů, a stránka se upraví tak, aby nebylo možné provést Cross-site scripting~\cite{whyAMPCache}.
 Obrázky jsou zkomprimovány a jsou z~nich odstraněna nepotřebná metadata. Pokud je to možné, dojde ke konverzi na WebP formát a ke generaci srcsetů.
 Externí zdroje jsou anotovány prefetch značkami, toto umožní AMP Prerender\footnote{Prerender: vykreslení stránky nebo její části ještě předtím, než si uživatel o~obsah této stránky zažádá.}.
 Nakonec dojde k~agresivní minifikaci\footnote{Minifikace: odstranění nepotřebných prvků (mezery, komentáře,..) ze zdrojového kódu. Také může například docházet ke zkrácení názvů proměnných nebo funkcí.} HTML a CSS.
 
 \smallHeading{Aktualizace}
-Standardně AMP cache provádí aktualizace uložených stránek dle principu stale-while-revalidate, pokud si tedy uživatel vyžádá dokument, o~kterém si AMP cache myslí, že je neplatný (například  je překročená Max-Age hlavička), tak mu AMP cache předá tuto starou verzi a zažádá si o~aktualizace, takže další uživatel dostane již verzi novou\cite{AMPUpdate}.
-Majitel domény, v~rámci které je AMP stránka hostovaná, může také “manuálně“ zažádat o~aktualizaci stránky pomocí update-cache dotazu. Tento dotaz musí být podepsán privátním RSA klíčem asociovaným s~danou doménou\cite{AMPUpdateUrl}.
+Standardně AMP cache provádí aktualizace uložených stránek dle principu stale-while-revalidate, pokud si tedy uživatel vyžádá dokument, o~kterém si AMP cache myslí, že je neplatný (například  je překročená Max-Age hlavička), tak mu AMP cache předá tuto starou verzi a zažádá si o~aktualizace, takže další uživatel dostane již verzi novou~\cite{AMPUpdate}.
+Majitel domény, v~rámci které je AMP stránka hostovaná, může také “manuálně“ zažádat o~aktualizaci stránky pomocí update-cache dotazu. Tento dotaz musí být podepsán privátním RSA klíčem asociovaným s~danou doménou~\cite{AMPUpdateUrl}.
 
 \subsubsection*{AMP Viewer}
 \emp{AMP Viewer} je prostředí, ve kterém běží jednak kód hostované AMP stránky, tak z~části kód samotného AMP Vieweru. Hlavní úlohou AMP Vieweru je optimalizace zobrazení AMP stránky a o~její prerendering.
@@ -244,17 +244,17 @@ Prerendering probíhá u~AMP stránek, o~kterých si poskytovatel AMP Vieweru my
     \item AMP Viewer stáhne AMP HTML z~AMP Cache.
     \item Načte potřebné JS knihovny.
     \item Stáhne obrázky a další externí obsah vhodný pro dané zařízení. \\
-    Dochází ke stažení jen toho obsahu, který se skutečně uživateli zobrazí okamžitě po příchodu na stránku\cite{ampConf}.
+    Dochází ke stažení jen toho obsahu, který se skutečně uživateli zobrazí okamžitě po příchodu na stránku~\cite{ampConf}.
 \end{enumerate}
 \end{gatger}
 \smallHeading{Nevýhody AMP Vieweru}
-Z~důvodu zobrazení naší AMP stránky v~rámci AMP Vieweru dochází k~tomu, že adresa, na které se uživatel nachází, nepřísluší naší stránce, ale je to adresa AMP Vieweru. Toto AMP Viewer aktuálně, pouze částečně, řeší pomocí falešného navigačního baru, který zobrazuje skutečnou zdrojovou adresu. Toto chování může zjednodušovat phishing útoky\cite[Ch.\ 3, p.\ 50]{VzhuruDoAMP}.
-Řešením tohoto problému je technologie Signed HTTP Exchange, která umožní oddělit autora nebo zdroj obsahu od jeho poskytovatele\cite[Ch.\ 3, p.\ 51]{VzhuruDoAMP}.
+Z~důvodu zobrazení naší AMP stránky v~rámci AMP Vieweru dochází k~tomu, že adresa, na které se uživatel nachází, nepřísluší naší stránce, ale je to adresa AMP Vieweru. Toto AMP Viewer aktuálně, pouze částečně, řeší pomocí falešného navigačního baru, který zobrazuje skutečnou zdrojovou adresu. Toto chování může zjednodušovat phishing útoky~\cite[Ch.\ 3, p.\ 50]{VzhuruDoAMP}.
+Řešením tohoto problému je technologie Signed HTTP Exchange, která umožní oddělit autora nebo zdroj obsahu od jeho poskytovatele~\cite[Ch.\ 3, p.\ 51]{VzhuruDoAMP}.
 \chapter{DotVVM}
-DotVVM je open source MVVM\footnote{MVVM: návrhový vzor model - view - viewmodel.} webový framework\cite{DotVVMIntro}. Backend část je založená na technologii ASP.NET (případně na její .NET Core variantě). Frontend je založený na značně upravené verzi javascriptové knihovny Knockout. Díky tomu, že DotVVM pokrývá frontend i backend, jsme schopni psát relativně komplexní aplikace jen s~použitím jazyka C\# (popřípadě jiného jazyka z~platformy .NET) a jazyka DotHtml\footnote{DotHtml: HTML rozšířené o~nové tagy, vazby na ViewModel a předpisy vazby DotHtml na Viewmodel.}. Z~velké části se tak vyhneme psaní javascriptu pro běžné a repetetivní úkony, jako například komunikace se serverem a mapování dat mezi formáty, které se používají na backendu a frontendu.
+DotVVM je open source MVVM\footnote{MVVM: návrhový vzor model - view - viewmodel.} webový framework~\cite{DotVVMIntro}. Backend část je založená na technologii ASP.NET (případně na její .NET Core variantě). Frontend je založený na značně upravené verzi javascriptové knihovny Knockout. Díky tomu, že DotVVM pokrývá frontend i backend, jsme schopni psát relativně komplexní aplikace jen s~použitím jazyka C\# (popřípadě jiného jazyka z~platformy .NET) a jazyka DotHtml\footnote{DotHtml: HTML rozšířené o~nové tagy, vazby na ViewModel a předpisy vazby DotHtml na Viewmodel.}. Z~velké části se tak vyhneme psaní javascriptu pro běžné a repetetivní úkony, jako například komunikace se serverem a mapování dat mezi formáty, které se používají na backendu a frontendu.
 Díky těmto vlastnostem a snadné rozšiřitelnosti DotVVM o~vlastní komponenty a komponenty třetích stran, je programátor se znalostí platformy .NET schopen velmi rychle vytvořit v~DotVVM aplikaci.
 
-DotVVM je vhodný převážně pro tvorbu Line of Business aplikací\footnote{Line of Business aplikace: Rozsáhlé informační systémy, které obsahují velké množství formulářů, tabulek, atd.}\cite{DotVVMIntro}. Pro čistě statické prezentační weby většinou nepřináší dostatek benefitů, které by vyvážily snížení rychlosti oproti stránkám používajícím kombinaci HTML a jednoduchého javascriptu. Ve chvílích, kdy ale potřebujeme mít v~rámci DotVVM Line of Business aplikace prezentační stránku, se může vyplatit i na tyto stránky použít DotVVM. Pro tento typ stránek by měl sloužit překlad DotVVM stránek do technologie AMP. Díky AMPu odstraníme problém rychlosti u~DotVVM stránek bez příliš velkých nákladů na implementaci.
+DotVVM je vhodný převážně pro tvorbu Line of Business aplikací\footnote{Line of Business aplikace: Rozsáhlé informační systémy, které obsahují velké množství formulářů, tabulek, atd.}~\cite{DotVVMIntro}. Pro čistě statické prezentační weby většinou nepřináší dostatek benefitů, které by vyvážily snížení rychlosti oproti stránkám používajícím kombinaci HTML a jednoduchého javascriptu. Ve chvílích, kdy ale potřebujeme mít v~rámci DotVVM Line of Business aplikace prezentační stránku, se může vyplatit i na tyto stránky použít DotVVM. Pro tento typ stránek by měl sloužit překlad DotVVM stránek do technologie AMP. Díky AMPu odstraníme problém rychlosti u~DotVVM stránek bez příliš velkých nákladů na implementaci.
 
 \section{Návrhový vzor MVVM}
 MVVM je návrhový vzor, který zajišťuje separaci kódu popisujícího jak data zobrazovat od kódu, který s~nimi manipuluje. Návrhový vzor MVVM se skládá ze tří hlavních částí: \textbf{M}odelu,\textbf{V}iew a \textbf{V}iew\textbf{M}odelu. Znázornění návrhového vzoru MVVM je ukázáno v obrázku \ref{MVVM DIAGRAM}.
@@ -262,7 +262,7 @@ MVVM je návrhový vzor, který zajišťuje separaci kódu popisujícího jak da
 \subsection*{Model}
 Model by měl být nositelem dat bez jakékoliv další funkcionality. To znamená, že by model měl být třída, která data uchovává (property), ale neobsahuje žádnou logiku (metody) pro manipulaci s~nimi.
 
-Některé zdroje uvádějí jako výjimku pro toto pravidlo velmi jednoduchý kód v~rámci get metody\footnote{Vlastnosti třídy, které jsou jen pro čtení a v~rámci get metody obsahují kód pro složení výsledné hodnoty, se v~rámci C# nazývají calculated properties.} jednotlivých vlastností a případně implementaci INotifyPropertyChanged\footnote{Interface INotifyPropertyChanged slouží k~oznámení zbytku aplikace, že se některá z~hodnot objektu změnila.}\cite{microsoft_2014}.
+Některé zdroje uvádějí jako výjimku pro toto pravidlo velmi jednoduchý kód v~rámci get metody\footnote{Vlastnosti třídy, které jsou jen pro čtení a v~rámci get metody obsahují kód pro složení výsledné hodnoty, se v~rámci C# nazývají calculated properties.} jednotlivých vlastností a případně implementaci INotifyPropertyChanged\footnote{Interface INotifyPropertyChanged slouží k~oznámení zbytku aplikace, že se některá z~hodnot objektu změnila.}~\cite{microsoft_2014}.
 
 \subsection*{View}
 View specifikuje, jak by měla být data a akce obsažené v~rámci ViewModelu reprezentovány. V~rámci webových aplikací to bude tedy specifikace toho, jak bude vypadat výsledné HTML. Toto oddělení logiky, dat a zobrazování umožňuje mít pro jeden viewmodel více views. Časté použití pro tento scénář je, že potřebuje mít oddělenou stránku pro zobrazení na velkých displejích a na mobilních zařízeních. Aby bylo možné takto recyklovat viewmodel, tak je nutné, aby všechny Views zobrazovaly stejnou podmnožinu dat.
@@ -282,16 +282,16 @@ Kromě tří hlavních částí MVVM obsahuje také komponentu, nazývanou Binde
 
 DotVVM ViewModel je C\# třída dědící od DotvvmViewModelBase, která na straně serveru reprezentuje data, která jsou klientské straně zobrazována, a akce, které je možné provádět.
 Díky tomu, že viewmodel musí být jak pro přenos ze serveru na klienta, tak pro přenos zpátky serializován, je nutné, aby všechna data, která potřebujeme u~klienta, byla definována jako public vlastnosti. Také je nutné, aby veškeré objekty, které chceme poslat na klienta, měly bezparametrický konstruktor.
-Akce\footnote{Akce jsou v~rámci DotVVM nazývané Commands.\cite{DotVVM-VM}}, které může stránka spouštět, jsou ve viewmodelu definovány jako veřejné metody.
+Akce\footnote{Akce jsou v~rámci DotVVM nazývané Commands.~\cite{DotVVM-VM}}, které může stránka spouštět, jsou ve viewmodelu definovány jako veřejné metody.
 
 Bázová třída DotvvmViewModelBase zajišťuje, že viewmodel bude mít přístup k~objektu Context, který obsahuje například informace o~příchozím HTTP požadavku nebo informace o~tom, zda je uživatel přihlášený.
 Tato bázová třída také definuje virtuální metody Init, Load a Prerender, které jsou volány v~různých fázích životního cyklu stránky (viz. kapitola \ref{lifecycle}).
 
 DotVVM Viewmodel také podporuje použití validačních a autorizačních atributů.
 
-Na jednotlivých vlastnostech jsme schopni pomocí standartních validačních atributů zajistit, že nedojde ke spuštění specifických akcí, pokud nejsou data ve viewmodelu validní\cite{DotVVM-Validation}. 
+Na jednotlivých vlastnostech jsme schopni pomocí standartních validačních atributů zajistit, že nedojde ke spuštění specifických akcí, pokud nejsou data ve viewmodelu validní~\cite{DotVVM-Validation}. 
 
-To, že je uživatel autorizovaný k~přístupu k~danému viewmodelu, můžeme zajistit tak, že viewmodel anotujeme autorizačním atributem. Autorizaci můžeme provádět nejen na úrovni celého viewmodelu, ale i na úrovni jednotlivých metod \cite{DotvvmAuth}. V~ukázce \ref{DotvvmVMDemo} je uveden příklad viewmodelu s~třemi vlastnostmi a jednou akcí.
+To, že je uživatel autorizovaný k~přístupu k~danému viewmodelu, můžeme zajistit tak, že viewmodel anotujeme autorizačním atributem. Autorizaci můžeme provádět nejen na úrovni celého viewmodelu, ale i na úrovni jednotlivých metod~\cite{DotvvmAuth}. V~ukázce \ref{DotvvmVMDemo} je uveden příklad viewmodelu s~třemi vlastnostmi a jednou akcí.
 
 \begin{lstlisting}[language=c#, caption=Ukázka DotVVM Viewmodelu,label=DotvvmVMDemo,captionpos=t]
 public class ExampleViewmodel : DotvvmViewModelBase
@@ -351,7 +351,7 @@ Vzhled a nastavení komponenty jsou definovány v~rámci C\# kódu. Vzhled kompo
 \subsection*{Binding systém}
 \label{DotVVMBinding}
 Pro napojení View na Viewmodel se používá binding systém. Tento systém podporuje přenos hodnot definovaných ve veřejných vlastnostech uvnitř viewmodelu do view a také volání veřejných metod ve viewmodelu.
-Binding systém se zapisuje ve formátu: {typBindingu: vlastnost/metoda()}\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v~tabulce \ref{tab: Tabulka typů bindingu}.
+Binding systém se zapisuje ve formátu: {typBindingu: vlastnost/metoda()}~\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v~tabulce \ref{tab: Tabulka typů bindingu}.
 
 \begin{table}[H]
 	\caption{Tabulka typů bindingu} 
@@ -376,7 +376,7 @@ Na straně klienta se používá javascriptový framework knockout.js . DotVVM/K
 
 Kromě přímého využití hodnot ve viewmodelu, také můžeme do napojení typu value zapsat pravdivostní výraz. Takto můžeme například na základě toho, jestli některá z~vlastností má námi vyžadovanou hodnotu nebo skrývat / zobrazovat elementy. Také je možné v~těchto situacích využívat ternární operátory a další jednoduché operace jako například zřetězení. 
 \section{DotVVM Route Table}
-Ke každé DotVVM stránce by měl být přiřazen minimálně jeden záznam v~DotVVM route table\cite{DotVVM-Routing}. Díky tomuto záznamu DotVVM dokáže z~URL příchozího požadavku určit, které DotVVM View je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní DotVVM presenter. Využití jiného než defaultního presenteru se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v~ukázce \ref{routeTableAdd}.
+Ke každé DotVVM stránce by měl být přiřazen minimálně jeden záznam v~DotVVM route table~\cite{DotVVM-Routing}. Díky tomuto záznamu DotVVM dokáže z~URL příchozího požadavku určit, které DotVVM View je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní DotVVM presenter. Využití jiného než defaultního presenteru se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v~ukázce \ref{routeTableAdd}.
 \begin{lstlisting}[language=C#, caption=Ukázka přidání záznamu do DotVVM route table v~rámci DotvvmStartup.cs.,label=routeTableAdd,captionpos=t]
 config.RouteTable.Add(
     // nazev cesty
@@ -470,7 +470,7 @@ Některé prostředky jsou nutné pro správný běh DotVVM stránky, a proto js
 \end{itemize}
 \section{Životní cyklus DotVVM stránek}
 \label{lifecycle}
-Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o~první požadavek na stránku (GET), nebo o~požadavek na vykonání nějaké akce (POST)\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v~obrázku \ref{Get a Post v DotVVM}.
+Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o~první požadavek na stránku (GET), nebo o~požadavek na vykonání nějaké akce (POST)~\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v~obrázku \ref{Get a Post v DotVVM}.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=1\textwidth]{obrazky-figures/DotVVM_lifecycle.png}\hfill
@@ -839,7 +839,7 @@ public void ReplaceControl(DotvvmControl currentControl,
 \end{lstlisting}
 
 \section{CSS infrastruktura}
-AMP zakazuje externích CSS styly a omezuje styly vložené do stránky na max 75kB vlastního CSS v~jediném HTML style tagu. Jedinou výjimkou pro toto pravidlo je maximálně 500kb CSS keyframes, které můžou být obsaženy v~samostatném style elementu.
+AMP zakazuje externích CSS styly a omezuje styly vložené do stránky na max 75\,kB vlastního CSS v~jediném HTML style tagu. Jedinou výjimkou pro toto pravidlo je maximálně 500\,kB CSS keyframes, které můžou být obsaženy v~samostatném style elementu.
 
 Díky těmto pravidlům je nutné nejprve všechny externí a embedované\footnote{Embedované: Vložené přímo na stránku.} styly spojit do jediného CSS kódu a ten následně rozdělit na CSS keyframes a zbytek. Spojení probíhá v~několika fázích.
 \subsection*{Modifikace stromu komponent}
@@ -893,7 +893,7 @@ Z~tohoto důvodu si uživatel pro každou skupinu validačních pravidel může 
 V~rámci generování HTML pro některé komponenty se stává, že komponenta i zkusí přidat klientský DataBind atribut. V~rámci AMP stránek bohužel tyto atributy nemohou fungovat, protože javascript, který tyto atributy zpracovává, není možné do stránky vložit. Některé tyto dataBind výrazy nám ale v~rámci AMP stránek nevadí, protože zajišťují aktualizaci hodnot při postbacku. Namísto toho, aby v~těchto případech nastala výjimka (v~případě že je pro danou validační skupinu její chování nastaveno na Throw), tak jen zalogujeme upozornění, že byl tento atribut vynechán.
 
 \section{Rozšiřitelnost}
-Technologie AMP v~základu obsahuje jen tři vestavěné komponenty: amp-layout, amp-image a amp-pixel \cite[Ch.\ 3, p.\ 160]{VzhuruDoAMP}. Tyto tři komponenty by měly pokrýt potřeby pro vytvoření úplně základní stránky. Pokud ale chceme pokročilé komponenty, na které jsme zvyklí ze světa plnohodnotných webových stránek (jako například fotogalerii nebo youtube video) tak musíme sáhnout po některé z~rozšiřujících komponent.
+Technologie AMP v~základu obsahuje jen tři vestavěné komponenty: amp-layout, amp-image a amp-pixel~\cite[Ch.\ 3, p.\ 160]{VzhuruDoAMP}. Tyto tři komponenty by měly pokrýt potřeby pro vytvoření úplně základní stránky. Pokud ale chceme pokročilé komponenty, na které jsme zvyklí ze světa plnohodnotných webových stránek (jako například fotogalerii nebo youtube video) tak musíme sáhnout po některé z~rozšiřujících komponent.
 
 Aktuálně je v~rámci technologie AMP dokumentace k~240 komponentám. V~rámci DotVVM.AMP jsou ale podporovány jen výše zmíněné tři komponenty. Pro přidání podpory pro další komponenty je možné pomocí vytvoření vlastní transformace a případně i vlastní komponenty.
 
@@ -945,7 +945,7 @@ public class IframeTransform : ControlReplacementTransformBase
     });
 }
 \end{lstlisting}
-\section*{Testování}
+\section{Testování}
 V rámci vývoje DotVVM AMP jsem pro jednotlivé komponenty a transformace vytvářel testovací stránky a automatizované UI testy k těmto stránkám. Pro UI testy jsem použil knihovnu selenium, která umožňuje ovládat prohlížeč přímo z testů. Celkově vzniklo 15 integračních testů\footnote{Testy a testovací stránky jsou dostupné v rámci repozitáře projektu.\newline
 \url{https://github.com/MichalTichy/DotVVM.AMP}}. Pro testování stránek se také ukázalo užitečné rozšíření do prohlížeče Chrome AMP Validator\footnote{Rozšíření AMP Validotor je dostupné z \url{https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc}.}. Toto rozšíření provádí validace AMP stránek na základě aktuálních validačních pravidel AMP.
 
@@ -1038,9 +1038,6 @@ Dále stránka používá pro zobrazení detailu obrázky javascriptovou knihovn
 
 V~rámci odstranění komponenty fancybox musíme vyřešit také odstranění javascriptových knihoven, které sloužily pro zobrazení fancybox komponenty. Tyto skripty obalíme komponentou amp:Exclude.
 
-
-
-
 \section{Zhodnocení výsledků}
 
 \begin{figure}[!h]
@@ -1053,64 +1050,29 @@ V~rámci odstranění komponenty fancybox musíme vyřešit také odstranění j
 
 Na obrázku \ref{originalVSamp} je zobrazeno porovnání obou verzí. Stránky vypadají velmi podobně a jediný na první pohled zřetelný rozdíl je použitý font a mírné odlišnosti v~pozici a velikosti obrázků. Další odlišností je absence možnosti zobrazit detail obrázků, kvůli absenci komponenty fancybox.
 
-Jak na testovací sadě příkladů\footnote{ Sada testovacích stránek je dostupná v~rámci zdrojového kódu nebo na \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak při použití na reálných aplikacích se ukázalo, že DotVVM.AMP zvládne základní scénáře zcela automaticky.Při použití na komplikovanějších aplikacích je možné pomocí jednoduchých úprav docílit toho, že ke stránkám budou vygenerovány jejich AMP verze i bez výrazných ztrát funkcionality. AMP verze a původní verze nejsou vzhledově zcela identické, ale rozdíly jsou minimální a daly by se odstranit malou úpravou stránky a CSS, které se na danou stránku aplikuje.
+Jak na testovací sadě příkladů\footnote{ Sada testovacích stránek je dostupná v~rámci zdrojového kódu nebo na\newline \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak při použití na reálných aplikacích se ukázalo, že DotVVM.AMP zvládne základní scénáře zcela automaticky.Při použití na komplikovanějších aplikacích je možné pomocí jednoduchých úprav docílit toho, že ke stránkám budou vygenerovány jejich AMP verze i bez výrazných ztrát funkcionality. AMP verze a původní verze nejsou vzhledově zcela identické, ale rozdíly jsou minimální a daly by se odstranit malou úpravou stránky a CSS, které se na danou stránku aplikuje.
 
-\chapter{Možnosti dalšího vývoje DotVVM.AMP}
+\chapter{Závěr}
+Cílem práce bylo navrhnout a vyvinout knihovnu, která by umožňovala překlad stránek napsaných v~technologii DotVVM do technologie AMP. V~rámci této práce vznikla knihovna DotVVM.AMP, umožnující vytvořit AMP verzi k~již existující DotVVM stránek, která tento cíl plní. DotVVM.AMP jsem otestoval jak na sadě testovacích stránek\footnote{ Sada testovacích stránek je dostupná v~rámci zdrojového kódu nebo na \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak na reálné webové aplikaci. Na všech testovaných stránkách se povedlo vytvořit jejich AMP validní verzi bez větších zásahů do původní stránky.
+
+\section{Další vývoj}
+
+V~rámci DotVVM Virtual Conference byla oznámena budoucí podpora pro AMP v~rámci DotVVM. Je tedy pravděpodobné, že bude tato knihovna dále udržována a rozvíjena~\cite{herceg_2020}.Doufám, že se do tohoto rozvoje zapojí i další členové DotVVM komunity.
+
 Přestože DotVVM.AMP je v~rámci verze 0.1.0.7 v~stavu ve kterém lze tuto knihovnu aplikovat na reálné projekty, tak stále existuje mnoho způsobů jak knihovnu DotVVM.AMP rozšířit.
 
-\section{Code review}
+\subsection*{Code review}
 V~rámci dalšího vývoje je v~první řadě třeba, aby celý kód prošel přes code review. Jelikož aktuálně jsem jediným autorem, tak by bylo dobré aby se na kód podíval zbytek lidí, kteří jsou zodpovědní za návrh architektury na DotVVM. Díky tomu, že DotVVM.AMP je separátní nuget balíček, tak sice přímo nezasahuje do DotVVM, ale bylo by přesto dobré se ujistit, že nepoužívá žádné API DotVVM nepodporovaným způsobem.
 
-\section{Cache již vygenerovaných stránek.}
+\subsection*{Cache již vygenerovaných stránek.}
 Díky tomu, že v~rámci DotVVM.AMP existuje pro každou URL pouze jedna verze stránky, tak by bylo možné již vygenerované stránky držet v~cache. Rychlost odpovědi ze serveru nám sice v~rámci AMP stránek, zas tolik díky AMP Cache nevadí, ale zvýšení rychlosti by se hodilo pro stránky, které ještě v~rámci AMP Cache nejsou, nebo na ně uživatel přistupuje přímo.
 Tato cache by nejspíše měla být typu stale-while-revalidate. To znamená, že při požadavku na stránku je vrácena verze z~cache a na pozadí se stránka v~cache zaktualizuje. Tato aktualizace se děje jen pokud verze v~cache je stará.
 
 V~případě existence takové cache, můžeme rovnou cache předvyplnit při startu aplikace. Tímto bychom zvýšili rychlost i pro první požadavek.
 
-\section{Další komponenty}
+\subsection*{Další komponenty}
 DotVVM.AMP obsahuje jen základní AMP komponenty. Bylo by dobré vybrat z~rozšiřujících AMP komponent ty nejčastěji používané, a pro ty přidat podporu do DotVVM.AMP. Tyto komponenty by měly být idálně distribuovány v~rámci samostatných nuget balíčků. Díky této separaci by bylo na uživately, které komponenty použít chce a které ne.
 
 
-\section{AMP Validator}
-Ve verzi 0.1.0.7 AmpValidator obsahuje ručně přepsané validační pravidla používané technologií AMP. AMP svá validační pravidla poskytuje na ve formátu Google Protocol Buffers\footnote{Validační pravidla jsou dostupná na \url{https://github.com/ampproject/amphtml/tree/master/validator}}. Ukázka validační definice je uvedena v~kódu \ref{protoascii}\cite{validatorGit}.  Soubory s~těmito validačními pravidly by se daly převést do C\# tříd a validaci provádět na základě takto získaných pravidel. Pro aktualizace validátoru by pak stačilo poskytnout nové validační definice.
-
-\begin{lstlisting}[language=html, caption=Ukázka části validačního pravidla pro iframe v~rámci protoascii souboru.,label=protoascii,captionpos=t]
-tags: {
-  html_format: AMP
-  tag_name: "IFRAME"
-  mandatory_ancestor: "NOSCRIPT"
-  mandatory_ancestor_suggested_alternative: "AMP-IFRAME"
-  spec_url: "https://amp.dev/documentation/components/amp-iframe"
-  attrs: {
-    name: "frameborder"
-    value: "0"
-    value: "1"
-  }
-  attrs: { name: "height" }
-  attrs: {
-    name: "sandbox"
-  }
-  attrs: {
-    name: "src"
-    mandatory_oneof: "['src', 'srcdoc']"
-    value_url: {
-      protocol: "data"
-      protocol: "https"
-      allow_relative: false
-    }
-    blacklisted_value_regex: "__amp_source_origin"
-  }
-  attrs: {
-    name: "srcdoc"
-    mandatory_oneof: "['src', 'srcdoc']"
-  }
-  attr_lists: "name-attr"
-}
-\end{lstlisting}
-
-\chapter{Závěr}
-Cílem práce bylo navrhnout a vyvinout knihovnu, která by umožňovala překlad stránek napsaných v~technologii DotVVM do technologie AMP. V~rámci této práce vznikla knihovna DotVVM.AMP, umožnující vytvořit AMP verzi k~již existující DotVVM stránek, která tento cíl plní. DotVVM.AMP jsem otestoval jak na sadě testovacích stránek\footnote{ Sada testovacích stránek je dostupná v~rámci zdrojového kódu nebo na \url{https://github.com/MichalTichy/DotVVM.AMP/tree/master/TestSamples}}, tak na reálné webové aplikaci. Na všech testovaných stránkách se povedlo vytvořit jejich AMP validní verzi bez větších zásahů do původní stránky.
-
-V~rámci DotVVM Virtual Conference byla oznámena budoucí podpora pro AMP v~rámci DotVVM. Je tedy pravděpodobné, že bude tato knihovna dále udržovaná a rozvíjena\cite{herceg_2020}.  Doufám, že se do tohoto rozvoje zapojí i další členové DotVVM komunity.
-
-V~rámci dalšího vývoje bych rád rozšířil DotVVM.AMP o~další komponenty a zapracoval na zvýšení rychlosti překladu pomocí vhodné cache vygenerovaných stránek. Také by stálo za zvážení, jestli nenahradit aktuální validační logiku za parser a aplikátor validačních pravidel, které se používají v~rámci Google AMP Cache.
+\subsection*{AMP Validator}
+Ve verzi 0.1.0.7 AmpValidator obsahuje ručně přepsané validační pravidla používané technologií AMP. AMP svá validační pravidla poskytuje na ve formátu Google Protocol Buffers\footnote{Validační pravidla jsou dostupná na \url{https://github.com/ampproject/amphtml/tree/master/validator}}. Soubory s~těmito validačními pravidly by se daly převést do C\# tříd a validaci provádět na základě takto získaných pravidel. Pro aktualizace validátoru by pak stačilo poskytnout nové validační definice.
