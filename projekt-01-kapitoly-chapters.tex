@@ -945,6 +945,9 @@ public class IframeTransform : ControlReplacementTransformBase
     });
 }
 \end{lstlisting}
+\section*{Testování}
+V rámci vývoje DotVVM AMP jsem pro jednotlivé komponenty a transformace vytvářel testovací stránky a automatizované UI testy k těmto stránkám. Pro UI testy jsem použil knihovnu selenium, která umožňuje ovládat prohlížeč přímo z testů. Celkově vzniklo 15 integračních testů\footnote{Testy a testovací stránky jsou dostupné v rámci repozitáře projektu.\newline
+\url{https://github.com/MichalTichy/DotVVM.AMP}}. Pro testování stránek se také ukázalo užitečné rozšíření do prohlížeče Chrome AMP Validator\footnote{Rozšíření AMP Validotor je dostupné z \url{https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc}.}. Toto rozšíření provádí validace AMP stránek na základě aktuálních validačních pravidel AMP.
 
 \chapter{Postup integrace překladu stávajících DotVVM stránek do~technologie AMP}
 V~této kapitole popíši postup, jak DotVVM.AMP použít pro přidání AMP verze k~již existující DotVVM stránce v~rámci reálné webové aplikace. V~rámci této ukázky použiji DotVVM.AMP ve verzi 0.1.0.7\footnote{\label{nuget}Knihovna DotVVM.AMP ve verzi 0.1.0.7 je veřejně dostupná na nuget.org.\newline
