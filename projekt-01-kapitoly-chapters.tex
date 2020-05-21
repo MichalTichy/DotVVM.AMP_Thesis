@@ -11,7 +11,7 @@ V~posledních letech se stále častěji můžeme setkat s~webovými stránkami,
 stránky a dalších optimalizací v~rámci AMP distribuční infrastruktury.
 
 Výsledkem všech těchto optimalizací jsou webové stránky, jejichž čas do první interakce\footnote{Čas do první interakce: anglicky se tato metrika nazývá Time to Interactive a vyjadřuje, jak dlouho trvá, než se stránka načte do stavu, kdy je uživatel schopný s~ní bez omezení interagovat.} je v~nízkých desetinách sekundy. Pro porovnání v~roce 2018 průměrně trvalo načtení webové
-stránky 8.66s\cite{TTI}.
+stránky 8.66\,s~\cite{TTI}.
 Udržení rychlosti načítání stránky na takto nízkých hranicích ovlivňuje, jak se uživatel po příchodu na naši
 stránku bude chovat (a zda si nerozmyslí naši stránku vůbec nenavštívit).
 
@@ -80,7 +80,7 @@ tak by nebylo možné provádět prerendering.
 
 
 Prvky distribučního procesu se různými metodami snaží minimalizovat čas potřebný k~zobrazení stránky
-uživateli. Distribuční AMP infrastrukturu provozují aktuálně Google, Microsoft a CloudFlare\cite[Ch.\ 1, p.\ 49]{VzhuruDoAMP}.
+uživateli. Distribuční AMP infrastrukturu provozují aktuálně Google, Microsoft a CloudFlare~\cite[Ch.\ 1, p.\ 49]{VzhuruDoAMP}.
 
 \subsection*{AMP Framework}
 AMP stránky jsou tvořeny ve zjednodušeném jazyku HTML, který je rozšířený o~AMP atributy a AMP
@@ -141,7 +141,7 @@ V~rámci hlavičky také můžeme přidat odkaz na požadované fonty. V~rámci 
 \end{table}
 
 \smallHeading{AMP Html elementy}
-Kvůli požadavku na fixní layout není možné použít všechny HTML elementy, některé jsou zakázané \ref{tab: Tabulka zakázaných HTML elementů}, některé byly nahrazeny jejich AMP variantami \ref{tab: Tabulka nahrazených AMP elementů} a u~jiných je omezena jejich funkcionalita \ref{tab: Tabulka HTML elementů s~omezenou funkcionalitou} \cite[p.\ 41]{AMP-ENG-Book}.
+Kvůli požadavku na fixní layout není možné použít všechny HTML elementy, některé jsou zakázané (viz. tabulka \ref{tab: Tabulka zakázaných HTML elementů}), některé byly nahrazeny jejich AMP variantami (viz. tabulka \ref{tab: Tabulka nahrazených AMP elementů}) a u~jiných je omezena jejich funkcionalita (viz. tabulka \ref{tab: Tabulka HTML elementů s omezenou funkcionalitou})\cite[p.\ 41]{AMP-ENG-Book}.
 
 \begin{table}[H]
 	\caption{Tabulka zakázaných HTML elementů} 
@@ -179,7 +179,7 @@ Kvůli požadavku na fixní layout není možné použít všechny HTML elementy
 		a & Jsou zakázané javascriptové odkazy.\\
 		\bottomrule
 	\end{tabular}
-	\label{tab: Tabulka HTML elementů s~omezenou funkcionalitou}
+	\label{tab: Tabulka HTML elementů s omezenou funkcionalitou}
 \end{table}
 
 \subsubsection*{AMP CSS}
@@ -257,12 +257,12 @@ Díky těmto vlastnostem a snadné rozšiřitelnosti DotVVM o~vlastní komponent
 DotVVM je vhodný převážně pro tvorbu Line of Business aplikací\footnote{Line of Business aplikace: Rozsáhlé informační systémy, které obsahují velké množství formulářů, tabulek, atd.}\cite{DotVVMIntro}. Pro čistě statické prezentační weby většinou nepřináší dostatek benefitů, které by vyvážily snížení rychlosti oproti stránkám používajícím kombinaci HTML a jednoduchého javascriptu. Ve chvílích, kdy ale potřebujeme mít v~rámci DotVVM Line of Business aplikace prezentační stránku, se může vyplatit i na tyto stránky použít DotVVM. Pro tento typ stránek by měl sloužit překlad DotVVM stránek do technologie AMP. Díky AMPu odstraníme problém rychlosti u~DotVVM stránek bez příliš velkých nákladů na implementaci.
 
 \section{Návrhový vzor MVVM}
-MVVM je návrhový vzor, který zajišťuje separaci kódu popisujícího jak data zobrazovat od kódu, který s~nimi manipuluje. Návrhový vzor MVVM se skládá ze tří hlavních částí: \textbf{M}odelu,\textbf{V}iew a \textbf{V}iew\textbf{M}odelu
+MVVM je návrhový vzor, který zajišťuje separaci kódu popisujícího jak data zobrazovat od kódu, který s~nimi manipuluje. Návrhový vzor MVVM se skládá ze tří hlavních částí: \textbf{M}odelu,\textbf{V}iew a \textbf{V}iew\textbf{M}odelu. Znázornění návrhového vzoru MVVM je ukázáno v obrázku \ref{MVVM DIAGRAM}.
 
 \subsection*{Model}
 Model by měl být nositelem dat bez jakékoliv další funkcionality. To znamená, že by model měl být třída, která data uchovává (property), ale neobsahuje žádnou logiku (metody) pro manipulaci s~nimi.
 
-Některé zdroje uvádějí jako výjimku pro toto pravidlo velmi jednoduchý kód v~rámci get metody\footnote{Vlastnosti třídy, které jsou jen pro čtení a v~rámci get metody obsahují kód pro složení výsledné hodnoty, se v~rámci C# nazývají calculated properties.} jednotlivých vlastností a případně implementaci INotifyPropertyChanged\footnote{Interface INotifyPropertyChanged slouží k~oznámení zbytku aplikace, že se některá z~hodnot objektu změnila.}.
+Některé zdroje uvádějí jako výjimku pro toto pravidlo velmi jednoduchý kód v~rámci get metody\footnote{Vlastnosti třídy, které jsou jen pro čtení a v~rámci get metody obsahují kód pro složení výsledné hodnoty, se v~rámci C# nazývají calculated properties.} jednotlivých vlastností a případně implementaci INotifyPropertyChanged\footnote{Interface INotifyPropertyChanged slouží k~oznámení zbytku aplikace, že se některá z~hodnot objektu změnila.}\cite{microsoft_2014}.
 
 \subsection*{View}
 View specifikuje, jak by měla být data a akce obsažené v~rámci ViewModelu reprezentovány. V~rámci webových aplikací to bude tedy specifikace toho, jak bude vypadat výsledné HTML. Toto oddělení logiky, dat a zobrazování umožňuje mít pro jeden viewmodel více views. Časté použití pro tento scénář je, že potřebuje mít oddělenou stránku pro zobrazení na velkých displejích a na mobilních zařízeních. Aby bylo možné takto recyklovat viewmodel, tak je nutné, aby všechny Views zobrazovaly stejnou podmnožinu dat.
@@ -272,7 +272,12 @@ Viewmodel je abstrakce View a vystavuje všechny Modely a akce, které jsou pot�
 Na viewmodel je dobré se dívat jen jako na mezistupeň mezi tím co vidí uživatel a vnitřní aplikační logikou\footnote{aplikační logika: Business Logic}. Tato separace se hodí zejména v~případě, že potřebujeme zobrazovat stejná data na více různých stránkách, ale v~natolik odlišné podobě, že nemůžeme použít jen více views pro stejný viewmodel. Díky tomu, že veškerou složitejší logiku přesuneme do samostatné vrstvy\footnote{Pokud používáme vícevrstvou architekturu.}(třídy), tak se vyhneme duplikaci kódu.
 \subsection*{Binder}
 Kromě tří hlavních částí MVVM obsahuje také komponentu, nazývanou Binder, která se stará o~obousměrnou synchronizaci dat mezi View a Viewmodelem. Tato komponenta zajišťuje, že View bude zobrazovat aktuální data z~Viewmodelu a také že viewmodel bude mít v~době vykonávání akcí všechna data, které uživatel změnil v~rámci View.
-
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\textwidth]{obrazky-figures/MVVM.png}
+	\caption{Diagram návrhového vzoru MVVM.}
+	\label{MVVM DIAGRAM}
+\end{figure}
 \section{DotVVM ViewModel}
 
 DotVVM ViewModel je C\# třída dědící od DotvvmViewModelBase, která na straně serveru reprezentuje data, která jsou klientské straně zobrazována, a akce, které je možné provádět.
@@ -305,7 +310,7 @@ public class ExampleViewmodel : DotvvmViewModelBase
 
 
 \section{DotVVM View}
-DotVVM View je stránka napsaná v~jazyce DotHtml.DotHtml je HTML rozšířeném o~vlastní komponenty (v~ukázce \ref{DotVVMView} <dot:TextBox \ldots /> , <dot:Literal \ldots /> a <dot:Button \ldots /> ) a takzvaný Binding systém, který umožňuje definovat vztah na vlastnost / metodu ve viewmodelu.
+DotVVM View je stránka napsaná v~jazyce DotHtml.DotHtml je HTML rozšířeném o~vlastní komponenty (v~ukázce \ref{DotVVMView} <dot:TextBox \ldots /> , <dot:Literal \ldots /> a <dot:Button \ldots />~) a takzvaný Binding systém, který umožňuje definovat vztah na vlastnost / metodu ve viewmodelu.
 
 \begin{lstlisting}[language=html, caption=Ukázka DotHtml,captionpos=t,label=DotVVMView]
 @viewModel  TestSamples.Common.ViewModels.ExampleViewmodel, TestSamples.Common
@@ -319,7 +324,8 @@ DotVVM View je stránka napsaná v~jazyce DotHtml.DotHtml je HTML rozšířeném
 <body>
     <dot:TextBox Text="{value: Number}" ValueType="Number" />
     <dot:Literal Text="{value: Text}" />
-    <dot:Button Click="{command: CustomCommand()}" Text="Run custom command" />
+    <dot:Button  Click="{command: CustomCommand()}"
+                 Text="Run custom command" />
 </body>
 </html>
 \end{lstlisting}
@@ -334,12 +340,10 @@ DotVVM komponenty jsou v~rámci View zaznačeny jako HTML tag, jehož název se 
 HTML komponenty, které do stránky přidávají dynamické chování, jsou v~DotVVM v~základu tvořeny samostatnými DotVVM komponentami (například dot:TextBox,dot:Button nebo dot:GridView). Další balíky komponent lze dokoupit (DotVVM Bootstrap, DotVVM BusinessPack) případně existují komunitou spravované balíky komponent. Na každém větším projektu také většinou vznikají komponenty, které jsou specifické pro daný projekt.
 
 \subsubsection{CodeOnly controls}
-Vzhled a nastavení komponenty jsou definovány v~rámci C\# kódu.\newline
-Vzhled komponenty je tvořen pomocí manuálního složení výsledného stromu prvků.
+Vzhled a nastavení komponenty jsou definovány v~rámci C\# kódu. Vzhled komponenty je tvořen pomocí manuálního složení výsledného stromu prvků.
 
 \subsubsection{Markup controls}
- Komponenta jen obaluje větší množství DotHtml kódu do jedné komponenty.\newline
- Používá se, pokud chceme větší bloky DotHtml používat opakovaně, ale nevyžadujeme větší customizace pro jednotlivá použití komponenty.
+ Komponenta jen obaluje větší množství DotHtml kódu do jedné komponenty. Používá se, pokud chceme větší bloky DotHtml používat opakovaně, ale nevyžadujeme větší customizace pro jednotlivá použití komponenty.
  
  \subsubsection{Markup controls with Codebehind}
  Markup controls with Codebehind představují kombinaci dvou předchozích přístupů včetně všech jejich výhod a nevýhod. Nevyžadují ruční skládání stromu komponent, ale umožňuje rozsáhlejší konfiguraci. Bohužel ale není možné dělat složitější věci, které lze v~Codeonly controls, a nejsou ani tak jednoduché na použití jako markup controls.
@@ -347,7 +351,7 @@ Vzhled komponenty je tvořen pomocí manuálního složení výsledného stromu 
 \subsection*{Binding systém}
 \label{DotVVMBinding}
 Pro napojení View na Viewmodel se používá binding systém. Tento systém podporuje přenos hodnot definovaných ve veřejných vlastnostech uvnitř viewmodelu do view a také volání veřejných metod ve viewmodelu.
-Binding systém se zapisuje ve formátu “{typBindingu: vlastnost/metoda()}”\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v~tabulce \ref{tab: Tabulka typů bindingu}.
+Binding systém se zapisuje ve formátu: {typBindingu: vlastnost/metoda()}\cite{DotVVM-Binding}. Jednotlivé typy bindingů jsou uvedeny v~tabulce \ref{tab: Tabulka typů bindingu}.
 
 \begin{table}[H]
 	\caption{Tabulka typů bindingu} 
@@ -368,12 +372,11 @@ Binding systém se zapisuje ve formátu “{typBindingu: vlastnost/metoda()}”\
 	\label{tab: Tabulka typů bindingu}
 \end{table}
 
-Na straně klienta se používá javascriptový framework knockout.js . DotVVM / Knockout.js uchovává viewmodel ve skrytém input elementu\footnote{Skrytý input element umožňuje, že obsah viewmodelu nebude ztracen (narozdíl od stavu JS) po návratu na předchozí stránku.} na konci HTML body elementu. Jednotlivé napojení typu value jsou v~rámci vygenerovaného HTML nahrazeny knockout.js výrazy, které zajistí napojení na viewmodel.
+Na straně klienta se používá javascriptový framework knockout.js . DotVVM/Knockout.js uchovává viewmodel ve skrytém input elementu\footnote{Skrytý input element umožňuje, že obsah viewmodelu nebude ztracen (narozdíl od stavu JS) po návratu na předchozí stránku.} na konci HTML body elementu. Jednotlivé napojení typu value jsou v~rámci vygenerovaného HTML nahrazeny knockout.js výrazy, které zajistí napojení na viewmodel.
 
 Kromě přímého využití hodnot ve viewmodelu, také můžeme do napojení typu value zapsat pravdivostní výraz. Takto můžeme například na základě toho, jestli některá z~vlastností má námi vyžadovanou hodnotu nebo skrývat / zobrazovat elementy. Také je možné v~těchto situacích využívat ternární operátory a další jednoduché operace jako například zřetězení. 
 \section{DotVVM Route Table}
 Ke každé DotVVM stránce by měl být přiřazen minimálně jeden záznam v~DotVVM route table\cite{DotVVM-Routing}. Díky tomuto záznamu DotVVM dokáže z~URL příchozího požadavku určit, které DotVVM View je požadováno, jestli jsou součástí cesty nějaké parametry a zda má použít jiný než defaultní DotVVM presenter. Využití jiného než defaultního presenteru se může hodit, příchozí požadavek zpracovat jiným způsobem než vykreslením DotVVM stránky. Příklad registrace do DotVVM route table je uveden v~ukázce \ref{routeTableAdd}.
-\pagebreak
 \begin{lstlisting}[language=C#, caption=Ukázka přidání záznamu do DotVVM route table v~rámci DotvvmStartup.cs.,label=routeTableAdd,captionpos=t]
 config.RouteTable.Add(
     // nazev cesty
@@ -393,10 +396,10 @@ config.RouteTable.Add(
 );
 \end{lstlisting}
 
-Nedefaultní DotVVM presenter se hodí například pokud potřebujeme lokalizovat jednotlivé stránky (na to použijeme LocalizableDotvvmPresenter) nebo pokud chceme například pro request na specifickou adresu vracet JSON\footnote{JavaScript Object Notation} namísto HTML.
+Jiný než standardní DotVVM presenter se hodí například pokud potřebujeme lokalizovat jednotlivé stránky (na to použijeme LocalizableDotvvmPresenter) nebo pokud chceme například pro request na specifickou adresu vracet JSON\footnote{JavaScript Object Notation} namísto HTML.
 \section{Externí zdroje}
 Dotvvm obsahuje mechanismus na správu externích prostředků\footnote{DotVVM Resource Manager}. Tento mechanismus je užitečný, například když potřebujeme v~rámci DotVVM stránek referencovat obsah (například javascript nebo css) třetích stran.Různé typy externích prostředků jsou uvedeny v~tabulce \ref{resTypeTable}. Pomocí Dotvvm Resource Manageru můžeme zaregistrovat tyto zdroje v~aplikaci a později jen specifikovat, které komponenty vyžadují přítomnost dané knihovny. V~rámci této registrace specifikujeme zapamatovatelný název pro daný prostředek, jeho typ a způsob jeho získávání\footnote{ Resource Location } a také jeho závislostí. Různé typy zdrojů externích prostředků jsou uvedeny v~tabulce \ref{resLocTable}.  V~ukázce \ref{resourceAdd} je uveden příklad registrace externího CSS prostředku, který se nachází na disku a má jednu závislost.
-
+\pagebreak
 \begin{lstlisting}[language=c#, caption=Registrace CSS,label=resourceAdd,captionpos=t]
 config.Resources.Register("bootstrap-css", new StylesheetResource()
 {
@@ -448,32 +451,31 @@ context.ResourceManager.AddRequiredResource("bootstrap-css");
 <dot:RequiredResource Name="bootstrap-css" />
 
 \end{lstlisting}
-\pagebreak
 Některé prostředky jsou nutné pro správný běh DotVVM stránky, a proto jsou zaregistrovány a vyžadovány automaticky.
 
 \begin{itemize}
   \setlength\itemsep{0.2em}
-    \item dotvvm\newline
-    Esenciální množina funkcí, které jsou požadované pro korenktní běh DotVVM stránky.
-    \item dotvvm.debug\newline
+    \item \textbf{dotvvm}:
+    Esenciální množina funkcí pro korektní běh DotVVM stránky.
+    \item \textbf{dotvvm.debug}:
     Pomocný kód, který usnadňuje ladění DotVVM stránek. Tento prostředek je obsažen jen v~rámci Debug módu.
-    \item dotvvm.fileUpload-css\newline
-    Css styly pro fileupload komponentu.
-    \item knockout\newline
+    \item \textbf{dotvvm.fileUpload-css}: 
+    CSS styly pro fileupload komponentu.
+    \item \textbf{knockout}: 
     Upravená verze Knockout.JS.
-    \item globalize\newline
+    \item \textbf{globalize}: 
     Upravená verze Globalize.JS.
-    \item globalize:\textit{JAZYK}
+    \item \textbf{globalize:\textit{JAZYK}}:
     Informace o~formátu data a času pro aktuální jazyk.
 \end{itemize}
 \section{Životní cyklus DotVVM stránek}
 \label{lifecycle}
-Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o~první požadavek na stránku (GET), nebo o~požadavek na vykonání nějaké akce (POST)\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v~obrázku \ref{Get a Post v~DotVVM}.
-\begin{figure}[hbt]
+Životní cyklus DotVVM stránky se liší na základě toho, jestli jde o~první požadavek na stránku (GET), nebo o~požadavek na vykonání nějaké akce (POST)\cite{DotVVM-VM}. Tento algoritmus je ve zjednodušené podobě znázorněn v~obrázku \ref{Get a Post v DotVVM}.
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=1\textwidth]{obrazky-figures/DotVVM_lifecycle.png}\hfill
 	\caption{Popis životního cyklu DotVVM stránek při HTTP GET a POST požadavcích.}
-	\label{Get a Post v~DotVVM}
+	\label{Get a Post v DotVVM}
 \end{figure}
 
 Každé DotHtml je přeloženo do stromové struktury a následně je z~tohoto stromu vygenerováno výsledné HTML, které se odešle jako odpověď na klientský dotaz. Po každé fázi generování HTML se volají metody, do kterých může uživatel doplnit vlastní logiku. Tyto metody se volají na celém viewmodelu, a na každé komponentě.
@@ -555,19 +557,19 @@ Aplikace velké části potencionálních uživatelů bohužel nejspíše nebudo
 Posledním důležitým aspektem této integrace je umožnit ( ale nevynucovat ) možnost konfigurovat, případně nahradit, jednotlivé komponenty zajišťující převod DotVVM stránky do technologie AMP.
 
 Z~těchto poznatků vyplývají základní prvky, které by měl tento projekt splňovat:
-
 \begin{itemize}
-\item jednoduché na použití
-\item minimalizace potřebného množství zásahů do původních stránek
-\item velká míra rozšiřitelnosti
+\item Jednoduchý na použití.
+\item Minimalizace potřebného množství zásahů do původních stránek.
+\item Velká míra rozšiřitelnosti.
 \end{itemize}
+
 \section{Registrace a konfigurace DotVVM.AMP}
 Pro správné chování všech prvků DotVVM.AMP je nutné nejdříve zaregistrovat potřebné prostředky do DotVVM a IOC\footnote{IOC: Inversion of Control} kontejneru. API\footnote{Programové rozhraní, které využívají ostatní části aplikace pro kontrolu našeho kódu.} pro registraci DotVVM.AMP je navrženo tak, aby se co nejvíce podobalo registračnímu API dalších rozšíření DotVVM\footnote{Nejrozšířenější rozšíření DotVVM jsou balíky komponent DotVVM Bootstrap a DotVVM BusinessPack.}.
 
 \subsection*{Registrace prostředků}
 Pro registraci prostředků a komponent, které DotVVM.AMP vyžaduje, se používá zavolání extension metody\footnote{\label{extension}Extension metoda je statická metoda, které je přidána k~určitému typo na jiném místě než v~rámci jeho definice.} AddDotvvmAmp na typu DotvvmConfiguration. Tuto registraci bych doporučoval provádět v~rámci metody Configure v~třídě DotvvmStartup.
 
-Tato metoda zaregistruje do DotvvmResourceRepository dva prostředky: AMP CSS boilerplate a AMP JS boilerplate. Tyto prostředky vloží do HTML hlavičky ampem vyžadovaný Css a Js kód.
+Tato metoda zaregistruje do DotvvmResourceRepository dva prostředky: AMP CSS boilerplate a AMP JS boilerplate. Tyto prostředky vloží do HTML hlavičky ampem vyžadovaný CSS a JS kód.
 
 \subsection*{Registrace AMP komponent}
 V~rámci volání extension metody\footref{extension} AddDotvvmAmp se také zaregistrují všechny AMP komponenty, které jsou v~namespace DotVVM.AMP.AmpControls jako DotVVM komponenty s~prefixem amp\footnote{Jejich použití bude tedy <amp:\textit{JMÉNO} \ldots /> . }.
@@ -600,7 +602,7 @@ Cache obsahující metadata (například rozměry) o~externích zdrojích (prim�
     \item \textit{StyleRemoveForbiddenImportant}\newline
     Určuje, zda se mají být z~CSS kódu odstraněny AMPem zakázané modifikátory !important.
     \item \textit{AmpJsUrl}\newline
-    Určuje jaký zdroj povinného AMP Js. Změnou tohoto parametru můžeme změnit používanou verzi technologie AMP.
+    Určuje jaký zdroj povinného AMP JS. Změnou tohoto parametru můžeme změnit používanou verzi technologie AMP.
     \item \textit{MaximumAmpCustomStylesheetSize}\newline
     Určuje jaká velikost v~bytech vlastního CSS bude ještě akceptována.
 \end{itemize}
@@ -631,7 +633,8 @@ Kvůli zajištění větší granulity jsou validace v~různých kontextech nast
 Veškerá nastavení by měla probíhat výlučně v~rámci volání metody AddDotvvmAmpSupport. Této metodě je možné jako parametr předat Action<DotvvmAmpConfiguration>\footnote{Action<DotvvmAmpConfiguration> : Anonymní metoda s~návratovým typem void, která jako jediný parametr dostane instanci DotvvmAmpConfiguration.}. Tato Action by měla sloužit jako jediné místo, kde bude zasahováno do DotvvmAmpConfiguration. Takto provedené úpravy konfigurace budou aplikovány hned jakmile si nějaká část DotVVM.AMP poprvé vyžádá přístup ke konfiguraci.
 
 \begin{lstlisting}[language=c#, caption=Registrace DotvvmAmpConfiguration,label=RegAmpConfig,captionpos=t]
-serviceCollection.Services.AddSingleton<DotvvmAmpConfiguration>(provider =>
+serviceCollection.Services.AddSingleton<DotvvmAmpConfiguration>(
+    provider =>
 {
     var registry = provider.GetService<IAmpControlTransformsRegistry>();
     var routeManager = provider.GetService<IAmpRouteManager>();
@@ -639,7 +642,9 @@ serviceCollection.Services.AddSingleton<DotvvmAmpConfiguration>(provider =>
     var resourceMetadataCache =
         provider.GetService<IAmpExternalResourceMetadataCache>();
     var config =
-        new DotvvmAmpConfiguration(registry, routeManager,resourceMetadataCache);
+        new DotvvmAmpConfiguration(registry,
+                                   routeManager,
+                                   resourceMetadataCache);
         
     RegisterTransforms(config, logger);
     modifyConfiguration?.Invoke(config);
@@ -653,11 +658,15 @@ Jelikož DotVVM.AMP nenahrazuje již vytvořené DotVVM stránky, ale jen k~ni v
 config.RouteTable.Add("Default", "index", "Views/Default.DotHtml");
 \end{lstlisting}
 
+\pagebreak
 Pro jednoduché stránky nepotřebuji od uživatele jiné informace, které jsou povinné v~rámci registrace klasické cesty.
 Tudíž se jako ideální řešení způsobu registrace jeví přidání DotVVM.AMP pomocí nahrazení volání metody Add nad DotvvmRouteTable extension metodou AddWithAmp, která se volá nad stejným typem a má skoro stejné vyžadované parametry. Takto upravená registrace do DotVVM route table je uvedena v~ukázce \ref{RegAmpRoute}.
 
 \begin{lstlisting}[language=c#, caption=Registrace AMP stránky do DotvvmRouteTable,,label=RegAmpRoute, captionpos=t]
-config.RouteTable.AddWithAmp("Default", "index", "Views/Default.DotHtml",config);
+config.RouteTable.AddWithAmp("Default",
+                             "index",
+                             "Views/Default.DotHtml",
+                             config);
 \end{lstlisting}
 
 Jediné co se na signatuře metody změnilo (kromě jejího názvu) je nový parametr vyžadující instanci DotVVMConfiguration.
@@ -705,7 +714,7 @@ Kvůli nutnosti upravovat externí prostředky (hlavně CSS) je nutné pro každ
 
 \subsection*{DotvvmAmpLocalizablePresenter}
 Druhým presenterem, který je v~rámci DotVVM.AMP implementován, je DotvvmAmpLocalizablePresenter. Tento presenter je AMP variantou na DotVVM LocalizablePresenter.
-Účel localizable presenteru je nastavit do  CultureInfo.CurrentCulture a CultureInfo.CurrentUICulture uživatelem vyžádaný jazyk\footnote{Vyžadovaný jazyk je nejčastěji zadán v~rámci nepovinného URL parametru.}. Po nastavení jazyka je další zpracování požadavku delegováno na defaultní DotvvmPresenter.
+Účel localizable presenteru je nastavit do  CultureInfo.CurrentCulture uživatelem vyžádaný jazyk\footnote{Vyžadovaný jazyk je nejčastěji zadán v~rámci nepovinného URL parametru.}. Po nastavení jazyka je další zpracování požadavku delegováno na defaultní DotvvmPresenter.
 
 Jediný rozdíl v~DotvvmAmpLocalizablePresenteru oproti LocalizablePresenteru je že namísto toho, aby se delegovalo zpracování další requestu na DotvvmPresenter, tak se zpracování deleguje na AmpPresenter.
 
@@ -745,7 +754,7 @@ AmpRepeater a AmpGridView v~DotVVM verzi používají vnitřní šablony.
 Obsah těchto šablon není ve stromu komponent během transformací, a proto se na něj transformace neaplikují. Z~tohoto důvodu je nutné všechny transformace aplikovat dodatečně a tudíž jsou defaultní komponenty Repeater a Gridview nahrazeny jejich AMP variantami.
 
 \subsection*{Amp komponenty}
- Některé komponenty v~DotVVM.AMP jsou určené i k~použití v~rámci DotHtml.
+ Některé komponenty v~DotVVM.AMP jsou určené i k~použití v~rámci DotHtml. Scénář pro použití těchto komponent například je, aby výsledné nastavení dané komponenty bylo jiné, než jak tyto komponenty nastavuje transformace.
  \subsubsection{Image}
  Tato komponenta reprezentuje náhradu za HTML img tag. Této komponentě můžeme nastavit běžné vlastnosti obrázku jako například velikost a zdroj, ale také i vlastnosti specifické pro amp-img. Hlavní z~těchto nových vlastností je atribut Layout. Tento atribut určuje, jak bude výsledný obrázek napozicován v~rámci AMP stránky.
  
@@ -769,12 +778,14 @@ O~sestavení Dotvvm View se v~klasických DotVVM stránkách stará DefaultDotvv
 
 V~rámci DotVVM.AMP se pro sestavení view používá AmpViewBuilder. Tato třída dekoruje IDotvvmViewBuilder. AmpViewBuilder nejprve nechá původní implementaci IDotvvmViewBuilder sestavit strom komponent pro původní DotVVM stránku a následně na takto sestavený strom začne aplikovat transformace. Proces výběru a aplikace transformací je znázorněn v~ukázce \ref{ApplyTransforms}. 
 \begin{lstlisting}[language=c#, caption= Ukázka aplikace transformací ,label=ApplyTransforms,captionpos=t]
-public void ApplyTransforms(DotvvmControl root,IDotvvmRequestContext context)
+public void ApplyTransforms(DotvvmControl root,
+                               IDotvvmRequestContext context)
 {
     ApplyTransforms(root.GetAllDescendants().ToList(), context);
 }
 
-public void ApplyTransforms(List<DotvvmControl> allControls, IDotvvmRequestContext context)
+public void ApplyTransforms(List<DotvvmControl> allControls,
+                               IDotvvmRequestContext context)
 {
     foreach (var control in allControls)
     {
@@ -785,7 +796,8 @@ public void ApplyTransforms(List<DotvvmControl> allControls, IDotvvmRequestConte
 \subsection*{Transformace}
 Transformace jsou třídy implementující IControlTransform. Tyto třídy mají za úkol transformovat strom komponent reprezentující DotVVM stránku, na strom komponent reprezentující AMP stránku. Transformace dělíme do několika kategorií: klasické, validační a nahrazující. To jestli, je možné danou transformaci použít, zjistíme pomocí metody CanTransform, kterou musí každá transformace implementovat.
 \subsubsection{Klasické transformace}
-    Klasické transformace dědí z~ControlTransformBasem. Jsou to transformace, které mohou pouze měnit nastavení dané komponenty. Samotná transformace probíhá v~několika krocích:
+    Klasické transformace dědí z~ControlTransformBasem. Jsou to transformace, které mohou pouze měnit nastavení dané komponenty. Tyto transformace se používají například pro nastavení vykreslovacího módu na serverové vykreslování. Samotná transformace probíhá v~několika krocích:
+    \pagebreak
     \begin{enumerate}
         \item Rozhodnutí, zda by tato komponenta měla být zahrnuta ve výsledném stromu komponent.\newline
         V~případě, že je na komponentě nastaveno například Amp.Exclude na hodnotu true, dojde k~jejímu vyřazení ze stromu komponent a dále se již v~transformaci nepokračuje.
@@ -801,21 +813,21 @@ Transformace jsou třídy implementující IControlTransform. Tyto třídy mají
         Metoda existuje z~důvodu pozdější rozšiřitelnosti. Některé transformace v~rámci této metody provádějí finální úpravy komponenty.
     \end{enumerate}
 \subsubsection{Validační transformace}
-    Validační transformace jsou rozšířením klasických transformací. Jsou to transformace, které dědí z~ControlValidatorTransformBase. Validační transformace provádí ověření, zda je danou komponentu v~jejím aktuálním nastavení možné použít v~rámci AMP stránky. Tyto transformace v~rámci metody TransformCore provedou validaci požadovaných vlastností. Pokud daná vlastnost není validní, tak dojde k~výjimce nebo k~vynechání dané komponenty a zalogování chyby (záleží na nastavení UnsupportedControlPropertiesHandlingMode).
+    Validační transformace jsou rozšířením klasických transformací. Jsou to transformace, které dědí z~ControlValidatorTransformBase. Validační transformace provádí ověření, zda je danou komponentu v~jejím aktuálním nastavení možné použít v~rámci AMP stránky. Tyto transformace v~rámci metody TransformCore provedou validaci požadovaných vlastností. Pokud daná vlastnost není validní, tak dojde k~výjimce nebo k~vynechání dané komponenty a zalogování chyby (záleží na nastavení UnsupportedControlPropertiesHandlingMode). Validační transformace se používají například pro kontrolu toho, zda není v rámci komponenty GridView zapnuta podpora editačního módu.
 \subsubsection{Nahrazující transformace}
     Nahrazující transformace jsou rozšířením validačních transformací. Jsou to transformace, které dědí z~ControlReplacementTransformBase. Nahrazující transformace nahradí jednu komponentu za jinou v~rámci TransformCore metody. V~rámci nahrazení dojde ke zkopírování všech atributů a vlastností. Při nahrazení komponenty je nutné přenést všechny potomky dané komponenty a také je důležité správně nastavit odkaz na rodičovskou komponentu a původní komponentu ze stromu odebrat. Kód zajištující nahrazení komponenty je uveden v~ukázce \ref{ControlReplace}.
-    
+    \pagebreak
     \begin{lstlisting}[language=c#, caption= Nahrazení jedné DotVVM komponenty za jinou. ,label=ControlReplace,captionpos=t]
-public void ReplaceControl(DotvvmControl currentControl, DotvvmControl newControl)
+public void ReplaceControl(DotvvmControl currentControl,
+                            DotvvmControl newControl)
 {
     var parent = currentControl.Parent as DotvvmControl;
-    DotvvmControl[] children = new DotvvmControl[currentControl.Children.Count];
+    DotvvmControl[] children =
+                            new DotvvmControl[currentControl.Children.Count];
     currentControl.Children.CopyTo(children, 0);
-
     if (parent != null)
     {
         var childIndex = parent.Children.IndexOf(currentControl);
-
         parent.Children.Remove(currentControl);
         parent.Children.Insert(childIndex, newControl);
     }
@@ -826,7 +838,7 @@ public void ReplaceControl(DotvvmControl currentControl, DotvvmControl newContro
 
 \end{lstlisting}
 
-\section{Css infrastruktura}
+\section{CSS infrastruktura}
 AMP zakazuje externích CSS styly a omezuje styly vložené do stránky na max 75kB vlastního CSS v~jediném HTML style tagu. Jedinou výjimkou pro toto pravidlo je maximálně 500kb CSS keyframes, které můžou být obsaženy v~samostatném style elementu.
 
 Díky těmto pravidlům je nutné nejprve všechny externí a embedované\footnote{Embedované: Vložené přímo na stránku.} styly spojit do jediného CSS kódu a ten následně rozdělit na CSS keyframes a zbytek. Spojení probíhá v~několika fázích.
@@ -841,6 +853,7 @@ Během vykreslení prostředku AmpCustomStylesheetResource nebo AmpCustomStylesh
 
 \subsubsection*{Generování CSS}
 \begin{enumerate}
+  \setlength{\itemsep}{14pt}%
     \item Asynchronně se stáhnou všechny požadované CSS.
     \item Všechny CSS kódy se spojí do jediného CSS.
     \item Dojde k~ověření na předčastné ukončení.
@@ -884,17 +897,7 @@ Technologie AMP v~základu obsahuje jen tři vestavěné komponenty: amp-layout,
 
 Aktuálně je v~rámci technologie AMP dokumentace k~240 komponentám. V~rámci DotVVM.AMP jsou ale podporovány jen výše zmíněné tři komponenty. Pro přidání podpory pro další komponenty je možné pomocí vytvoření vlastní transformace a případně i vlastní komponenty.
 
-Pokud bychom chtěli přidat podporu pro komponentu amp-iframe\footnote{amp-iframe: \url{https://amp.dev/documentation/components/amp-iframe/?format=websites}}, tak musíme nejdříve vytvořit DotVVM komponentu \footnote{Tutoriál na tvorbu komponent lze nalézt v~rámci DotVVM dokumentace v~sekci Control Development.\newline \url{https://www.dotvvm.com/docs/tutorials/control-development-code-only-controls/2.0}}, kterou nahradíme všechny iframe na stránce. Tato komponenta bude obsahovat všechny vlastnosti, které budeme chtít podporovat. V~případě amp-iframe to jsou:
-\begin{itemize}
-    \item src\newline
-    Odkaz na cílovou stránku.
-    \item sandbox\newline
-    Nastavení izolace a bezpečnostních pravidel pro daný iframe.
-    \item Standardní atributy AMP elementů.\newline
-    Tyto atributy obsahuje bázová třída AmpControl, takže stačí, když ji podědíme.
-    \item Další atributy standardního HTML iframe.
-\end{itemize}
-
+Pokud bychom chtěli přidat podporu pro komponentu amp-iframe\footnote{amp-iframe: \url{https://amp.dev/documentation/components/amp-iframe/?format=websites}}, tak musíme nejdříve vytvořit DotVVM komponentu \footnote{Tutoriál na tvorbu komponent lze nalézt v~rámci DotVVM dokumentace v~sekci Control Development.\newline \url{https://www.dotvvm.com/docs/tutorials/control-development-code-only-controls/2.0}}, kterou nahradíme všechny iframe na stránce. Tato komponenta bude obsahovat všechny vlastnosti, které budeme chtít podporovat.
 Dále budeme do stránky potřebovat vložit odkaz na požadovaný javascript. Toto uděláme stejně jako kdybychom potřebovali přiložit jakýkoliv jiný prostředek k~DotVVM komponentě. Zaregistrujeme prostředek, který vyrenderuje potřebný script HTML tag do DotVVMResourceManageru a ten v~rámci OnInit metody přidáme jako required resource.
 
 Jako poslední krok musíme vytvořit transformaci, která všechny HtmlGenericControl s~tagem iframe na stránce nahradí za náš iframe a zkopíruje jeho atributy do vlastností, které máme v~rámci naší DotVVM komponenty. Pokud bychom nechtěli kopírovat atributy, ale přesto využívat výhody Dotvvm properties, tak můžeme upravit getter příslušných vlastností podobně jako v~ukázce \ref{GetPropertyValueOrAttribute}.  Tato transformace by měla dědit z~ControlReplacementTransformBase. Bázová třída za nás vyřeší nahrazení nové komponenty ve stromu komponent a nakopíruje všechny DotVVM properties a atributy na novou komponentu. Výsledná transformace by mohla vypadat podobně jako ukázka kódu  \ref{AmpIframe}. Poslední zbývající krok je zaregistrovat naši transformaci do AmpControlTransformRegistry. Tuto registraci můžeme udělat v~rámci volání extension metody AddDotvvmAmpSupport nad typem IDotvvmServiceCollection. Příklad této registrace je uveden v~ukázce kódu \ref{TransformRegistration}.
@@ -908,26 +911,26 @@ public class IframeTransform : ControlReplacementTransformBase
  {
  }
 
-  public override bool CanTransform(DotvvmControl control)
-  {
-     return control is HtmlGenericControl generic &&
-            generic.TagName == "iframe";
-  }
+ public override bool CanTransform(DotvvmControl control)
+ {
+    return control is HtmlGenericControl generic &&
+           generic.TagName == "iframe";
+ }
 
-  protected override DotvvmControl CreateReplacementControl(DotvvmControl control)
-  {
-      return new AmpIframe();
-  }
+ protected DotvvmControl CreateReplacementControl(DotvvmControl con)
+ {
+     return new AmpIframe();
+ }
 }
 \end{lstlisting}
 
-\begin{lstlisting}[language=c#, caption=Možný způsob jak se vyhnout kopírování HTML atributů do DotVVM property.r ,label=GetPropertyValueOrAttribute,captionpos=t]
+\begin{lstlisting}[language=c#, caption=Možný způsob jak se vyhnout kopírování HTML atributů do DotVVM property. ,label=GetPropertyValueOrAttribute,captionpos=t]
 public virtual void RenderBeginTag(string name)
 {
         public string Src
         {
-            get { return GetPropertyValueOrAttribute(SrcProperty, "src"); }
-            set { SetValue(SrcProperty, value); Attributes.Remove("src"); }
+           get {return GetPropertyValueOrAttribute(SrcProperty, "src");}
+           set {SetValue(SrcProperty, value); Attributes.Remove("src");}
         }
 }
 \end{lstlisting}
@@ -961,12 +964,18 @@ Příklad toho, jak může konfigurace vypadat, nalezneme v~ukázce \ref{AmpConf
 \begin{lstlisting}[language=c#, caption=Ukázka možné AMP konfigurace,label=AmpConfig,captionpos=t]
 serviceCollection.AddDotvvmAmpSupport((configuration,_) =>
 {
-	configuration.AttributeHandlingMode = ErrorHandlingMode.LogAndIgnore;
-	configuration.HtmlTagHandlingMode = ErrorHandlingMode.LogAndIgnore;
-	configuration.KnockoutHandlingMode = ErrorHandlingMode.LogAndIgnore;
-	configuration.HtmlTagHandlingMode = ErrorHandlingMode.LogAndIgnore;
-	configuration.StylesHandlingMode = ErrorHandlingMode.LogAndIgnore;
-	configuration.StyleRemoveForbiddenImportant = true;
+	configuration
+	    .AttributeHandlingMode = ErrorHandlingMode.LogAndIgnore;
+	configuration
+	    .HtmlTagHandlingMode = ErrorHandlingMode.LogAndIgnore;
+	configuration
+	    .KnockoutHandlingMode = ErrorHandlingMode.LogAndIgnore;
+	configuration
+	    .HtmlTagHandlingMode = ErrorHandlingMode.LogAndIgnore;
+	configuration
+	    .StylesHandlingMode = ErrorHandlingMode.LogAndIgnore;
+	configuration
+	    .StyleRemoveForbiddenImportant = true;
 });
 \end{lstlisting}
 
@@ -979,7 +988,7 @@ config.RouteTable.AddWithAmp(
 	virtualPath,
 	config,
 	dotvvmPagePresenterFactory:
-	DotVVM.Framework.Hosting.LocalizablePresenter.BasedOnParameter("Language"),
+	LocalizablePresenter.BasedOnParameter("Language"),
 	ampPagePresenterFactory:
 	DotvvmAmpLocalizablePresenter.BasedOnParameterWithAmp("Language")
 	);
@@ -1016,7 +1025,7 @@ Stránka obsahuje kanonický odkaz\footnote{Kanonický odkaz je odkaz na stejnou
 	<a>
 		<img src="{value: Image.SrcSmall}"
 		     alt="{value: Title}"
-		     IncludeInPage="{resource: _this.Image.Src != null}" />
+		     IncludeInPage="{resource: _this.Image.Src!=null}"/>
 	</a>
 </amp:Include>
 
@@ -1031,10 +1040,9 @@ V~rámci odstranění komponenty fancybox musíme vyřešit také odstranění j
 
 \section{Zhodnocení výsledků}
 
-\begin{figure}[hbt]
-\hspace{-20px}
+\begin{figure}[!h]
 \makebox[\linewidth]{
-    \includegraphics[width=1.3\textwidth]{obrazky-figures/originalVSamp.png}
+    \includegraphics[width=1\textwidth]{obrazky-figures/originalVSamp.png}
     }
 	\caption{Porovnání původní stránky (vlevo) a její AMP verze (vpravo).}
 	\label{originalVSamp}
@@ -1065,7 +1073,7 @@ Ve verzi 0.1.0.7 AmpValidator obsahuje ručně přepsané validační pravidla p
 
 \begin{lstlisting}[language=html, caption=Ukázka části validačního pravidla pro iframe v~rámci protoascii souboru.,label=protoascii,captionpos=t]
 tags: {
-  html_format: AMP  # Disallowed in AMP4ADS because <noscript> is disallowed.
+  html_format: AMP
   tag_name: "IFRAME"
   mandatory_ancestor: "NOSCRIPT"
   mandatory_ancestor_suggested_alternative: "AMP-IFRAME"

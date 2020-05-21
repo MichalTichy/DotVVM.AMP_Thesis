@@ -997,6 +997,24 @@ Management}{\@fit@EN}%
 
 \usepackage{blindtext}
 \usepackage{listings}
+\usepackage{color}
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\usepackage{upquote}
+
+\lstset{%
+    % Basic design
+    backgroundcolor=\color{editorGray},
+    basicstyle={\small\ttfamily},   
+    frame=l,
+    % Line numbers
+    xleftmargin={0.75cm},
+    numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true
+}
 \usepackage[toc,page,header]{appendix}
 \RequirePackage{titletoc}
 \ifczech
